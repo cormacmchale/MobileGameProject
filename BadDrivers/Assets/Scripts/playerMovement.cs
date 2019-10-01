@@ -1,0 +1,33 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerMovement : MonoBehaviour
+{
+    //variable for movement
+    private Vector3 movementH;
+    private Vector3 movementV;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        movePlayer();
+    }
+
+    private void movePlayer()
+    {
+        //check for an up/down input
+        movementH = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
+        transform.position = transform.position + movementH * Time.deltaTime;
+
+        //check for a left/right input
+        movementV = new Vector3(0.0f, Input.GetAxis("Vertical"), 0.0f);
+        transform.position = transform.position + movementV * Time.deltaTime;
+    }
+}
