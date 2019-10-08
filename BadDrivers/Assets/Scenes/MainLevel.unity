@@ -215,8 +215,9 @@ GameObject:
   - component: {fileID: 1718892745}
   - component: {fileID: 1718892744}
   - component: {fileID: 1718892747}
+  - component: {fileID: 1718892748}
   m_Layer: 0
-  m_Name: Car_Asset
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,6 +311,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
+--- !u!114 &1718892748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718892743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192246cf28c124846af6a614acd26d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8062166691729413991, guid: 792142fadaab5a64d8c4be93743a29fb, type: 3}
 --- !u!1001 &8090929867706270382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,7 +339,7 @@ PrefabInstance:
     - target: {fileID: 8090929866609896972, guid: 8e7cd1e6204047341be94fa3e82bb715,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.061
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8090929866609896972, guid: 8e7cd1e6204047341be94fa3e82bb715,
         type: 3}

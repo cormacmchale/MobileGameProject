@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    //variable for movement
+    //variables for adding movement
     private Vector3 movementH;
     private Vector3 movementV;
 
@@ -23,11 +23,11 @@ public class playerMovement : MonoBehaviour
     private void movePlayer()
     {
         //check for an up/down input
-        movementH = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
+        movementH = new Vector3(Input.GetAxis("Horizontal")*2.5f, 0.0f, 0.0f);
         transform.position = transform.position + movementH * Time.deltaTime;
 
         //check for a left/right input
-        movementV = new Vector3(0.0f, Input.GetAxis("Vertical"), 0.0f);
+        movementV = new Vector3(0.0f, Input.GetAxis("Vertical")*2.5f, 0.0f);
         transform.position = transform.position + movementV * Time.deltaTime;
     }
 }

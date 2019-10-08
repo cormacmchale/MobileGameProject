@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//**
+//From class
+//**
 public class Boundaries : MonoBehaviour
 {
     // get the main camera
@@ -21,10 +23,9 @@ public class Boundaries : MonoBehaviour
     {
         // find the bounds from the camera
         screenBound = mainCamera.ScreenToWorldPoint(
-                                new Vector3(Screen.width,
+                               new Vector3(Screen.width,
                                             Screen.height,
                                             mainCamera.transform.position.z));
-        Debug.Log("Screen width = " + screenBound.x);
         width = gameObject.GetComponent<SpriteRenderer>().bounds.extents.x;
         height = gameObject.GetComponent<SpriteRenderer>().bounds.extents.y;
     }
@@ -43,7 +44,6 @@ public class Boundaries : MonoBehaviour
         viewPos.y = Mathf.Clamp(viewPos.y, 
                                 screenBound.y * -1 + (width * 0.8f), 
                                 screenBound.y - height);
-
         transform.position = viewPos;
     }
 }
