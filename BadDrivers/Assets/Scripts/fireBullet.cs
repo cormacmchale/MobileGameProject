@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fireBullet : MonoBehaviour
+public class FireBullet : MonoBehaviour
 {
     //placeholder for the bullet prefab 
-    public bullet bullet;
+    public Bullet bullet;
     // Update is called once per frame
     void Update()
     {
@@ -46,11 +46,14 @@ public class fireBullet : MonoBehaviour
         //moving backwards accross the x axis and up the y --shoot down left
         else if (Input.GetAxis("Vertical") > 0 && Input.GetAxis("Horizontal") < 0) return -215;
         //default - shoot straight
-        else return 0;
+        else return -1;
     }
     //gives the bullet the correct position and calculated angle and instantiates the bullet for firing
     void shoot(int angle)
     {
+        //player not moving
+        if (angle == -1)
+        { return; }
         bullet.transform.position = transform.position;
         bullet.transform.Rotate(Vector3.forward * angle);
         Instantiate(bullet);

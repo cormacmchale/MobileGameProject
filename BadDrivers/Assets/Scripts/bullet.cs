@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
 
     [SerializeField]
@@ -20,20 +20,26 @@ public class bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        //not needed
         //Check for a match with the specified name on any GameObject that collides with your GameObject
-        if (col.gameObject.name == "player")
+        //if (col.gameObject.name == "player")
+        //{
+        //If the GameObject's name matches the one you suggest, output this message in the console
+        //Debug.Log("Do Nothing");
+        //}
+        switch(col.gameObject.name)
         {
-            //If the GameObject's name matches the one you suggest, output this message in the console
-            Debug.Log("Do Nothing");
-        }
-        else
-        {
-            Debug.Log("Enemey Destroyed");
+            //this works
+            //Debug.Log("Enemey Destroyed");
             //destroy everything
             //update score here??
             //also check for ambulance
-            Destroy(gameObject);
-            Destroy(col.gameObject);
+            case "Bounds":
+                Destroy(gameObject);
+                break;
+            default:
+                Debug.Log("You shouldn't see this, check where this bullet went");
+                break;
         }
     }
 
