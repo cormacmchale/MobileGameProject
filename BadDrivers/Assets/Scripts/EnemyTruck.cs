@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyTruck : MonoBehaviour
 {
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        //give it a random speed
+        //these game objects need to be managed
+        rb.velocity = transform.right * Random.Range(-10.0f, -5.0f);
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     void OnCollisionEnter2D(Collision2D col)
     {
         //not needed
@@ -23,7 +23,6 @@ public class Enemy : MonoBehaviour
         //If the GameObject's name matches the one you suggest, output this message in the console
         Debug.Log(col.gameObject.name);
         //}
-        //something for bullet
         //something for player
     }
 }

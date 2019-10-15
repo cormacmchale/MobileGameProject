@@ -9,5 +9,4 @@ public class AddWireFrame : MonoBehaviour
         {
             Gizmos.DrawWireSphere(transform.position, 0.25f);
         }
-
 }

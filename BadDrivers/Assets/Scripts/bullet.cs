@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 
     [SerializeField]
     private float thrust = 10.0f;
+
     public Rigidbody2D shoot;
     //private Collision2D = GameObject.getComponent<On>;
 
@@ -27,17 +28,15 @@ public class Bullet : MonoBehaviour
         //If the GameObject's name matches the one you suggest, output this message in the console
         //Debug.Log("Do Nothing");
         //}
-        switch(col.gameObject.name)
+        Debug.Log(col.gameObject.tag);
+        switch(col.gameObject.tag)
         {
-            //this works
-            //Debug.Log("Enemey Destroyed");
-            //destroy everything
             //update score here??
             //also check for ambulance
             case "Bounds":
                 Destroy(gameObject);
                 break;
-            case "Truck":
+            case "Enemy":
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 break;
