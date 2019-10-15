@@ -37,6 +37,10 @@ public class Bullet : MonoBehaviour
             case "Bounds":
                 Destroy(gameObject);
                 break;
+            case "Truck":
+                Destroy(gameObject);
+                Destroy(col.gameObject);
+                break;
             default:
                 Debug.Log("You shouldn't see this, check where this bullet went");
                 break;
