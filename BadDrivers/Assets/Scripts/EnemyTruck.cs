@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyTruck : MonoBehaviour
 {
+    private float outOfbounds = -20.0f;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,15 @@ public class EnemyTruck : MonoBehaviour
         rb.velocity = transform.right * Random.Range(-10.0f, -5.0f);
     }
 
+    private void Update()
+    {
+        DestroyOffScreen();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
         //not needed
@@ -24,5 +34,15 @@ public class EnemyTruck : MonoBehaviour
         Debug.Log(col.gameObject.name);
         //}
         //something for player
+    }
+
+    //Object Management
+    private void DestroyOffScreen()
+    {
+        //after the truck travels far enough.. then destroy it
+        if (gameObject.transform.position.x < outOfbounds)
+        {
+            Destroy(gameObject);
+        }
     }
 }

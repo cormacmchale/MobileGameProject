@@ -15,16 +15,20 @@ public class SpawnRandomTruck : MonoBehaviour
     {
         SpawnRepeating();
     }
-
+    private void Update()
+    {
+    }
+    //spawn the trucks randomly
     private void SpawnRepeating()
     {
         InvokeRepeating("Spawn", 2.0f, 1.5f);
     }
-
     private void Spawn()
     {
+        //random spawn in the camera bounds
         pickRandom = new Vector3(main.transform.position.x+6, Random.Range(main.transform.position.y - 5f, main.transform.position.y + 5), main.transform.position.z+15);
         Truck.transform.position = pickRandom;
         Instantiate(Truck);
     }
+
 }
