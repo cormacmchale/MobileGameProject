@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 
     [SerializeField]
     private float thrust = 10.0f;
+    private float outOfboundsLeftDown = -20.0f;
+    private float outOfboundsUpRight = 20.0f;
 
     public Rigidbody2D shoot;
     //private Collision2D = GameObject.getComponent<On>;
@@ -19,30 +21,38 @@ public class Bullet : MonoBehaviour
         shoot.velocity = transform.right * thrust;
     }
 
+    private void Update()
+    {
+        DestroyOffScreen();
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
-        //not needed
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        //if (col.gameObject.name == "player")
-        //{
-        //If the GameObject's name matches the one you suggest, output this message in the console
-        //Debug.Log("Do Nothing");
-        //}
         Debug.Log(col.gameObject.tag);
+        //destroy based on name
         switch(col.gameObject.tag)
         {
-            //update score here??
-            //also check for ambulance
-            case "Bounds":
-                Destroy(gameObject);
-                break;
-            case "Enemy":
+            case "EnemyTruck":
                 Destroy(gameObject);
                 Destroy(col.gameObject);
+                //score keeper here?
                 break;
             default:
-                Debug.Log("You shouldn't see this, check where this bullet went");
+                //Debug.Log("You shouldn't see this, check where this bullet went");
                 break;
+        }
+    }
+    //Object Management
+    private void DestroyOffScreen()
+    {
+        //after the bullet travels far enough.. then destroy it
+        if (gameObject.transform.position.x < outOfboundsLeftDown || gameObject.transform.position.y < outOfboundsLeftDown)
+        {
+            Destroy(gameObject);
+        }
+        else if (gameObject.transform.position.x > outOfboundsUpRight || gameObject.transform.position.y > outOfboundsUpRight)
+        {
+            Destroy(gameObject);
         }
     }
 
