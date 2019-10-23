@@ -10,13 +10,21 @@ public class SpawnRandomTruck : MonoBehaviour
     private Vector3 pickRandom;
     private Rigidbody2D rb;
 
+    [SerializeField]
+    private bool spawnTrucks = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        SpawnRepeating();
+        if (spawnTrucks)
+        {
+            SpawnRepeating();
+        }
     }
+    //not needed
     private void Update()
     {
+
     }
     //spawn the trucks randomly
     private void SpawnRepeating()
