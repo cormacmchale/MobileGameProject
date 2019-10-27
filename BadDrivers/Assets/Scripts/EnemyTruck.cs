@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EnemyTruck : MonoBehaviour
 {
-    private float outOfbounds = -20.0f;
+    private float outOfbounds = -10.0f;
+
+    //pass this to diffculty management system??
+    [SerializeField]
+    private float truckSpeed;
     private Rigidbody2D rb;
     // Start is called before the first frame update
 
@@ -13,7 +17,7 @@ public class EnemyTruck : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         //give it a random speed
         //these game objects need to be managed
-        rb.velocity = transform.right * Random.Range(-7.5f, -2.5f);
+        rb.velocity = transform.right * truckSpeed;
     }
 
     private void Update()
@@ -25,6 +29,7 @@ public class EnemyTruck : MonoBehaviour
     {
         //Debug.Log(col.gameObject.name);
         //do something with player
+        //do something with bike
     }
 
     //Object Management

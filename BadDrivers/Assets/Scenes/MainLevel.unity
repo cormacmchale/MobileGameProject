@@ -178,6 +178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Truck: {fileID: 5250379589514517153, guid: 4392f5f7ccaf6c0428d97375b9f96484, type: 3}
   main: {fileID: 519420031}
+  howOftenBetweenSpawns: 1.5
+  timeUntilFirstSpawn: 2
+  spawnTrucks: 1
 --- !u!1 &469971793
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +295,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1210068910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210068911}
+  - component: {fileID: 1210068912}
+  - component: {fileID: 1210068913}
+  m_Layer: 0
+  m_Name: BikeSpawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1210068911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210068910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.02, y: -6.21, z: -11.526449}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1210068912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210068910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feada9fb6311068458e8b1d6a9f25726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bike: {fileID: 26715059572250729, guid: e9452d4c3ced1194a96e28f55de844a7, type: 3}
+  Main: {fileID: 0}
+  spawnBikes: 1
+  howOftenBetweenSpawns: 6
+  timeUntilFirstSpawn: 1
+--- !u!114 &1210068913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210068910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79986a138e2172419c69b369c1cf419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1402110155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -377,7 +441,7 @@ GameObject:
   - component: {fileID: 1718892749}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

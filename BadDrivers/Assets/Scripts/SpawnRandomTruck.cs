@@ -6,9 +6,15 @@ public class SpawnRandomTruck : MonoBehaviour
 {
     public GameObject Truck;
     public Camera main;
-
+    //random position to spawn truck in relation to camera
     private Vector3 pickRandom;
-    private Rigidbody2D rb;
+
+    //spawning variables
+    //good to have these for increasing difficulty
+    [SerializeField]
+    private float howOftenBetweenSpawns;
+    [SerializeField]
+    private float timeUntilFirstSpawn;
 
     [SerializeField]
     private bool spawnTrucks = false;
@@ -21,15 +27,10 @@ public class SpawnRandomTruck : MonoBehaviour
             SpawnRepeating();
         }
     }
-    //not needed
-    private void Update()
-    {
-
-    }
     //spawn the trucks randomly
     private void SpawnRepeating()
     {
-        InvokeRepeating("Spawn", 2.0f, 1.5f);
+        InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);
     }
     private void Spawn()
     {

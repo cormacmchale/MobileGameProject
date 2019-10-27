@@ -7,8 +7,8 @@ public class Bullet : MonoBehaviour
 
     [SerializeField]
     private float thrust = 10.0f;
-    private float outOfboundsLeftDown = -20.0f;
-    private float outOfboundsUpRight = 20.0f;
+    private float outOfboundsLeftDown = -10.0f;
+    private float outOfboundsUpRight = 10.0f;
 
     public Rigidbody2D shoot;
     //private Collision2D = GameObject.getComponent<On>;
@@ -28,11 +28,16 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(col.gameObject.tag);
+        //Debug.Log(col.gameObject.tag);
         //destroy based on name
         switch(col.gameObject.tag)
         {
             case "EnemyTruck":
+                Destroy(gameObject);
+                Destroy(col.gameObject);
+                //score keeper here?
+                break;
+            case "EnemyBike":
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 //score keeper here?
