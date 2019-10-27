@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 26715059572250729}
   - component: {fileID: 26715059572250732}
   - component: {fileID: 26715059572250733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bike_Asset
   m_TagString: EnemyBike
   m_Icon: {fileID: 0}
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac2a9e494943604ca6553850c787d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 26715059572250732}
   speed: 1.5
 --- !u!50 &26715059572250732
 Rigidbody2D:

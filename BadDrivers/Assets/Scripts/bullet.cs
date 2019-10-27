@@ -9,13 +9,14 @@ public class Bullet : MonoBehaviour
     private float thrust = 10.0f;
     private float outOfboundsLeftDown = -10.0f;
     private float outOfboundsUpRight = 10.0f;
+    private Vector2 stopMovement = new Vector2(0,0);
 
+    //use this to move the bullet
     public Rigidbody2D shoot;
-    //private Collision2D = GameObject.getComponent<On>;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {    
         //will control direction of bullet based of the direction the player is moving in
         //will not need anything else here
         shoot.velocity = transform.right * thrust;
@@ -36,11 +37,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 //score keeper here?
-                break;
-            case "EnemyBike":
-                Destroy(gameObject);
-                Destroy(col.gameObject);
-                //score keeper here?
+                //call score manager
                 break;
             default:
                 //Debug.Log("You shouldn't see this, check where this bullet went");
@@ -60,5 +57,4 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

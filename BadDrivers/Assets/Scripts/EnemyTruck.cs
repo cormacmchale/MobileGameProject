@@ -21,24 +21,19 @@ public class EnemyTruck : MonoBehaviour
     }
 
     private void Update()
-    {
-        DestroyOffScreen();
+    { 
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         //Debug.Log(col.gameObject.name);
         //do something with player
+            //call score manager
         //do something with bike
+            //call score manager
+        //do something with tractor
+            //just destroy?
     }
 
-    //Object Management
-    private void DestroyOffScreen()
-    {
-        //after the truck travels far enough.. then destroy it
-        if (gameObject.transform.position.x < outOfbounds)
-        {
-            Destroy(gameObject);
-        }
-    }
 }
