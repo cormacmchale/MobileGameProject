@@ -20,7 +20,7 @@ public class EnemyBicycle : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(col.gameObject.name);
+        //Debug.Log(col.gameObject.name);
         //do something with player
     }
     // Update is called once per frame

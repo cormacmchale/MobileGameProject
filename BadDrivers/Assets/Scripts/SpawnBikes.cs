@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnAndMoveBikes : MonoBehaviour
+public class SpawnBikes : MonoBehaviour
 {
     public EnemyBicycle Bike;
+    public GameObject BikeManager;
     public Camera Main;
     //spawn bikes into here
     //manage movement form here
@@ -35,18 +36,29 @@ public class SpawnAndMoveBikes : MonoBehaviour
     }
     private void Spawn()
     {
+        //maintain 5 in the list
+        //hopefully
+        //for (int i = 0; i <= bikesOnScreen.Count-1; i++)
+        //{
+        //    if (bikesOnScreen[i].transform)
+        //   {
+        //        Debug.Log(bikesOnScreen[i].transform.position.x);
+        //    }
+        //}
         //random spawn in the camera bounds
         //randomly spawn the bike in relation to player
         //add bike to list
         //list.count for knowing how many bikes on screen??
         //and for managing amount of bikes on screen
-        if (bikesOnScreen.Count == 5)
+        if (BikeManager.transform.childCount == 5)
         {
             return;//max 5 bikes on screen for now??
         }
-        Instantiate(Bike);
-        bikesOnScreen.Add(Bike);
+        else
+        {
+            Instantiate(Bike, BikeManager.transform);
+        }
+        //bikesOnScreen.Add(Bike);
         //manage array??
-        //bikesOnScreen.TrimExcess();
     }
 }
