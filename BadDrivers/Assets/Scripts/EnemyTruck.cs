@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyTruck : MonoBehaviour
 {
-    private float outOfbounds = -10.0f;
-
     //pass this to diffculty management system??
     [SerializeField]
     private float truckSpeed;

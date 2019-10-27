@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnRandomTruck : MonoBehaviour
 {
-    public GameObject Truck;
+    public EnemyTruck Truck;
     public Camera main;
     //random position to spawn truck in relation to camera
     private Vector3 pickRandom;
@@ -37,7 +37,7 @@ public class SpawnRandomTruck : MonoBehaviour
         //random spawn in the camera bounds
         pickRandom = new Vector3(main.transform.position.x+6, Random.Range(main.transform.position.y - 5f, main.transform.position.y + 5), main.transform.position.z+15);
         Truck.transform.position = pickRandom;
-        Instantiate(Truck);
+        Instantiate(Truck, transform);
     }
 
 }
