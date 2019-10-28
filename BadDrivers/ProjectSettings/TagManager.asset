@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Bounds
+  - EnemyTruck
+  - EnemyBike
+  - Bullet
+  - EnemyTractor
+  - Ambulance
   layers:
   - Default
   - TransparentFX
@@ -13,15 +20,15 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - bikeLayer
+  - bulletLayer
+  - destroyBulletLayer
+  - truckLayer
+  - destroyTruckLayer
+  - tractorLayer
+  - playerLayer
+  - destroyTractorLayer
+  - AmbulanceLayer
   - 
   - 
   - 

@@ -30,8 +30,7 @@ public class EnemyTruck : MonoBehaviour
             //call score manager
         //do something with bike
             //call score manager
-        //do something with tractor
-            //just destroy?
+        //tractor ignored in collision Matrix
     }
 
 }
