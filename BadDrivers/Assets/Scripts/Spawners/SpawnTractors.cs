@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnBikes : MonoBehaviour
+public class SpawnTractors: MonoBehaviour
 {
-    public EnemyBicycle Bike;
-    public Camera Main;
-    //spawn bikes into here
-    public GameObject BikeManager;
+    public EnemyTractor Tractor;
+    // Start is called before the first frame update
+    public GameObject TractorManager;
 
     [SerializeField]
-    private bool spawnBikes = false;
+    private bool spawnTractors = false;
 
     //spawning variables
     //good to have these for increasing difficulty
@@ -19,14 +18,14 @@ public class SpawnBikes : MonoBehaviour
     [SerializeField]
     private float timeUntilFirstSpawn;
 
-    // Start is called before the first frame update
     void Start()
     {
-        if (spawnBikes)
+        if (spawnTractors)
         {
             SpawnRepeating();
         }
     }
+
     //spawn the trucks randomly
     private void SpawnRepeating()
     {
@@ -34,15 +33,14 @@ public class SpawnBikes : MonoBehaviour
     }
     private void Spawn()
     {
-        //maintain 5 on screen
-        //and for managing amount of bikes on screen
-        if (BikeManager.transform.childCount == 5)
+        //maintain 3 on screen
+        if (TractorManager.transform.childCount == 3)
         {
-            return;//max 5 bikes on screen for now??
+            return;//max 3 Tractors on screen for now??
         }
         else
         {
-            Instantiate(Bike, BikeManager.transform);
+            Instantiate(Tractor, TractorManager.transform.position, new Quaternion(0, 0, 0, 0), TractorManager.transform);
         }
     }
 }
