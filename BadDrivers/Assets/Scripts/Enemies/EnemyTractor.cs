@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyTractor : MonoBehaviour
 {
     //get a list of the points to follow
-    private GameObject pathsPoints;
+    private GameObject pathPoints;
     //have access to the array of transforms
     Transform[] followThis;
     //keep the tractors still
@@ -19,9 +19,9 @@ public class EnemyTractor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pathsPoints = GameObject.Find("TractorPath");
+        pathPoints = GameObject.Find("TractorPath");
         //get all options for path
-        followThis = pathsPoints.GetComponentsInChildren<Transform>();
+        followThis = pathPoints.GetComponentsInChildren<Transform>();
         nextMove = RNG();
         //testing
         //Debug.Log(followThis.Length);
