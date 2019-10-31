@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private scoreManager score;
+    private healthManager health;
 
     [SerializeField]
     private float thrust = 10.0f;
@@ -22,8 +23,7 @@ public class Bullet : MonoBehaviour
         //will control direction of bullet based of the direction the player is moving in
         //will not need anything else here
         shoot.velocity = transform.right * thrust;
-        score = gameObject.GetComponent<scoreManager>();
-        
+        score = FindObjectOfType<scoreManager>();
     }
 
     private void Update()
@@ -40,7 +40,17 @@ public class Bullet : MonoBehaviour
             case "EnemyTruck":
                 Destroy(gameObject);
                 Destroy(col.gameObject);
-                score.addScore(10);
+                score.addScore(20);
+                break;
+            case "EnemyTractor":
+                Destroy(gameObject);
+                Destroy(col.gameObject);
+                score.addScore(30);
+                break;
+            case "Ambulance":
+                Destroy(gameObject);
+                Destroy(col.gameObject);
+                score.addScore(50);
                 break;
             default:
                 //Debug.Log("You shouldn't see this, check where this bullet went");

@@ -25,6 +25,7 @@ public class EnemyBicycle : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         //do something with collisions with other gameObjects
+        //decrement score here
     }
     // Update is called once per frame
     void Update()
