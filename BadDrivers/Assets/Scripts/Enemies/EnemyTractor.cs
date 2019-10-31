@@ -23,17 +23,15 @@ public class EnemyTractor : MonoBehaviour
         //get all options for path
         followThis = pathPoints.GetComponentsInChildren<Transform>();
         nextMove = RNG();
-        //testing
-        //Debug.Log(followThis.Length);
-    }
 
+    }
+    private bool go = true;
     // Update is called once per frame
     void Update()
     {
         transform.rotation = stayStill;
         transform.position = Vector2.MoveTowards(transform.position, followThis[nextMove].position, speed * Time.deltaTime);
         if (transform.position.x == followThis[nextMove].position.x && transform.position.y == followThis[nextMove].position.y) nextMove=RNG();
-
     }
     private int RNG()
     {
