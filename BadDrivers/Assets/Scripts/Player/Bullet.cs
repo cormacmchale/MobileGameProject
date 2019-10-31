@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+    private scoreManager score;
 
     [SerializeField]
     private float thrust = 10.0f;
+    //gameObject management
     private float outOfboundsLeftDown = -10.0f;
     private float outOfboundsUpRight = 10.0f;
     private Vector2 stopMovement = new Vector2(0,0);
@@ -21,6 +22,7 @@ public class Bullet : MonoBehaviour
         //will control direction of bullet based of the direction the player is moving in
         //will not need anything else here
         shoot.velocity = transform.right * thrust;
+        score = gameObject.GetComponent<scoreManager>();
         
     }
 
@@ -38,6 +40,7 @@ public class Bullet : MonoBehaviour
             case "EnemyTruck":
                 Destroy(gameObject);
                 Destroy(col.gameObject);
+                score.addScore(10);
                 break;
             default:
                 //Debug.Log("You shouldn't see this, check where this bullet went");

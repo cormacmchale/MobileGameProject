@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class scoreManager : MonoBehaviour
 {
-    //hide constructor
-    private scoreManager(){}
-
     //OverAll Score
-    public int playerScore;
+    private int playerScore;
 
     BlockingCollection<int> scoreQueue;
     // Start is called before the first frame update
@@ -23,21 +20,11 @@ public class scoreManager : MonoBehaviour
     {
         playerScore += scoreQueue.Take();
     }
-
+    // add the player score when nesscary
     public void addScore(int score)
     {
+        //testing
+        Debug.Log(playerScore);
         scoreQueue.Add(score);
-    }
-
-    public scoreManager getInstance()
-    {
-        if (this == null)
-        {
-            return new scoreManager();
-        }
-        else
-        {
-            return this;
-        }     
     }
 }
