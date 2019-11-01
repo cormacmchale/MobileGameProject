@@ -40,7 +40,7 @@ public class TimerSpeedup : MonoBehaviour
         flagSpeed = false;
         player.increaseSpeed();
         //alert difficult script here!- pass message
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(20);
         flagSpeed = true;
     }
     //increase difficulty here accross the board

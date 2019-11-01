@@ -22,10 +22,10 @@ public class SpawnBikes : MonoBehaviour
     void Start()
     {
         //may not need
-        //if (spawnBikes)
-        //{
-        //    SpawnRepeating();
-        //}
+        if (spawnBikes)
+        {
+            SpawnRepeating();
+        }
     }
     //spawn the trucks randomly
     private void SpawnRepeating()

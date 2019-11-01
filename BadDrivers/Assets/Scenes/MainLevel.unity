@@ -948,7 +948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &897490245
 MonoBehaviour:
@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003475611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4, y: -5.89, z: -391.5}
+  m_LocalPosition: {x: -4.4, y: -5.92, z: -391.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   Ambulance: {fileID: 9117307199833331811, guid: 93d84ac07f7c44c4a9e7c1b0939a4a17,
     type: 3}
   ambulanceManager: {fileID: 602236653}
-  spawnAmbulance: 0
+  spawnAmbulance: 1
   howOftenBetweenSpawns: 5
   timeUntilFirstSpawn: 1
 --- !u!1001 &1402110155
@@ -1764,7 +1764,7 @@ GameObject:
   - component: {fileID: 1718892744}
   - component: {fileID: 1718892748}
   - component: {fileID: 1718892749}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2065,10 +2065,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139718626}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.43, y: -2.7, z: -6.4856205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
