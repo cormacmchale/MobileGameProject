@@ -10,12 +10,14 @@ public class EnemyTruck : MonoBehaviour
     private Rigidbody2D rb;
     // Start is called before the first frame update
     public scoreManager score;
+    public healthManager health;
 
     void Start()
     {
         //find score manager for bikes
-
         score = FindObjectOfType<scoreManager>();
+        health = FindObjectOfType<healthManager>();
+
         rb = gameObject.GetComponent<Rigidbody2D>();
         //give it a random speed
         //these game objects need to be managed
@@ -29,14 +31,6 @@ public class EnemyTruck : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        //Debug.Log(col.gameObject.name);
-
-        //do something with player
-        //call healthManager
-        //do something with bike
-        //call score manager
-        //tractor ignored in collision Matrix
-
         switch (col.gameObject.tag)
         {
             case "EnemyBike":
@@ -47,6 +41,8 @@ public class EnemyTruck : MonoBehaviour
                 break;
             case "Player":
                 //animation
+                Destroy(gameObject);
+                health.decrementHealth();
                 //health manager
                 break;
             default:

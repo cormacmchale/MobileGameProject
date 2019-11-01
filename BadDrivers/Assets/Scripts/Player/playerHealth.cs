@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class playerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //maintain this here
+    private int health = 5;
+    //method to lose the heart
+    public int getHealth()
     {
-        
+        return health;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void loseAheart()
     {
-        
+        health--;
+    }
+    private void Update()
+    {
+        //check for health = 0
+        if (health == 0)
+        {
+            //alert end of game
+            Debug.Log("yo dead bitch");
+        }
     }
 }
