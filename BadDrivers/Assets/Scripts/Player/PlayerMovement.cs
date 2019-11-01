@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementH;
     private Vector3 movementV;
 
-    [SerializeField]
-    private float speedOfPlayer;
+    //this will be incremented by timer
+    private float speedOfPlayer = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +32,10 @@ public class PlayerMovement : MonoBehaviour
         //check for a left/right input
         movementV = new Vector3(0.0f, Input.GetAxis("Vertical")*speedOfPlayer, 0.0f);
         transform.position = transform.position + movementV * Time.deltaTime;
+    }
+    public void increaseSpeed()
+    {
+        Debug.Log(speedOfPlayer);
+        speedOfPlayer+=2f;
     }
 }

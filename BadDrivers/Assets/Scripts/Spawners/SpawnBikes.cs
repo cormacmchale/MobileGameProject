@@ -21,10 +21,11 @@ public class SpawnBikes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (spawnBikes)
-        {
-            SpawnRepeating();
-        }
+        //may not need
+        //if (spawnBikes)
+        //{
+        //    SpawnRepeating();
+        //}
     }
     //spawn the trucks randomly
     private void SpawnRepeating()
@@ -42,6 +43,19 @@ public class SpawnBikes : MonoBehaviour
         else
         {
             Instantiate(Bike, BikeManager.transform.position, new Quaternion(0,0,0,0), BikeManager.transform);
+        }
+    }
+    public void spawnBIke()
+    {
+        //maintain 5 on screen
+        //and for managing amount of bikes on screen
+        if (BikeManager.transform.childCount == 5)
+        {
+            return;//max 5 bikes on screen for now??
+        }
+        else
+        {
+            Instantiate(Bike, BikeManager.transform.position, new Quaternion(0, 0, 0, 0), BikeManager.transform);
         }
     }
 }
