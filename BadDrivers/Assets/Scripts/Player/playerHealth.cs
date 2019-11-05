@@ -15,13 +15,17 @@ public class playerHealth : MonoBehaviour
     {
         health--;
     }
+    public void gainAheart()
+    {
+        health++;
+    }
     private void Update()
     {
         //check for health = 0
         if (health == 0)
         {
             //alert end of game
-            Debug.Log("yo dead bitch");
+            Debug.Log("game over");
         }
     }
 }

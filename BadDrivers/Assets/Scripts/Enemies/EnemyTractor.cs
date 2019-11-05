@@ -11,6 +11,9 @@ public class EnemyTractor : MonoBehaviour
     //keep the tractors still
     Quaternion stayStill = new Quaternion(0,0,0,0);
 
+    public scoreManager score;
+    public healthManager health;
+
     private int nextMove;
 
     [SerializeField]
@@ -23,6 +26,9 @@ public class EnemyTractor : MonoBehaviour
         //get all options for path
         followThis = pathPoints.GetComponentsInChildren<Transform>();
         nextMove = RNG();
+        //find score manager for bikes
+        score = FindObjectOfType<scoreManager>();
+        health = FindObjectOfType<healthManager>();
 
     }
     private bool go = true;
@@ -37,6 +43,27 @@ public class EnemyTractor : MonoBehaviour
     {
         //return a random point in the array
         return Random.Range(0,followThis.Length);
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "EnemyBike":
+                Destroy(gameObject);
+                Destroy(col.gameObject);
+                score.decrementScore(100);
+                //animation
+                break;
+            case "Player":
+                //animation
+                Destroy(gameObject);
+                health.decrementHealth();
+                //health manager
+                break;
+            default:
+                //Debug.Log("You shouldn't see this, check where this bullet went");
+                break;
+        }
     }
 
 }

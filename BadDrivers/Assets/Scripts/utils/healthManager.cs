@@ -41,4 +41,8 @@ public class healthManager : MonoBehaviour
     {
         player.loseAheart();
     }
+    public void incrementHealth()
+    {
+        player.gainAheart();
+    }
 }

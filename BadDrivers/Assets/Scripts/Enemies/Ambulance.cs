@@ -14,6 +14,9 @@ public class Ambulance : MonoBehaviour
     //make the abulance stop condition
     private bool go = true;
 
+    public scoreManager score;
+    public healthManager health;
+
     void Start()
     {
         speed = 1.0f;
@@ -21,6 +24,9 @@ public class Ambulance : MonoBehaviour
         //get all options for path
         followThis = pathPoints.GetComponentsInChildren<Transform>();
         new WaitForSeconds(200);
+
+        score = FindObjectOfType<scoreManager>();
+        health = FindObjectOfType<healthManager>();
 
     }
 
@@ -50,5 +56,23 @@ public class Ambulance : MonoBehaviour
         }
         yield return new WaitForSeconds(3);
         go = true;
+    }
+
+    //ambulane collisions
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "Player":
+                //animation
+                Destroy(gameObject);
+                health.incrementHealth();
+                score.addScore(50);
+                //health manager
+                break;
+            default:
+                //Debug.Log("You shouldn't see this, check where this bullet went");
+                break;
+        }
     }
 }

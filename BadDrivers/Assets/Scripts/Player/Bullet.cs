@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
         //will not need anything else here
         shoot.velocity = transform.right * thrust;
         score = FindObjectOfType<scoreManager>();
+        health = FindObjectOfType<healthManager>();
     }
 
     private void Update()
@@ -51,6 +52,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 score.addScore(50);
+                health.incrementHealth();
                 break;
             default:
                 //Debug.Log("You shouldn't see this, check where this bullet went");
