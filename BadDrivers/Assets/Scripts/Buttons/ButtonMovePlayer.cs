@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MovePlayer : MonoBehaviour
+public class ButtonMovePlayer : MonoBehaviour
 {
     //will need to access the speed of the player dynamically
     private PlayerMovement getSpeed;
     private GameObject player;
     private Vector3 movement;
-
     private bool check = false;
 
+    //set the angle that player is moving based off of button press
+    private int angle;
 
     private void Start()
     {
@@ -20,13 +21,13 @@ public class MovePlayer : MonoBehaviour
         getSpeed = FindObjectOfType<PlayerMovement>();
 
     }
-
     void Update()
     {
         if (check)
         {
             addMovement();
         }
+        //Debug.Log(angle);
     }
 
     public void addMovement()
@@ -37,6 +38,8 @@ public class MovePlayer : MonoBehaviour
             case "Up":
                 movement = new Vector3(0.0f, getSpeed.getSpeedOfPlayer(), 0.0f);
                 getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
+                //set angle here
+                angle = 90;
                 break;
             case "Down":
                 movement = new Vector3(0.0f, -getSpeed.getSpeedOfPlayer(), 0.0f);
@@ -50,7 +53,6 @@ public class MovePlayer : MonoBehaviour
                 movement = new Vector3(-getSpeed.getSpeedOfPlayer(),0.0f, 0.0f);
                 getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
                 break;
-
         }
     }
     //possible solution?
@@ -62,5 +64,11 @@ public class MovePlayer : MonoBehaviour
     public void keyUp()
     {
         check = false;
+        //not moving
+        //angle = -1;
+    }
+    public int getAngle()
+    {
+        return angle;
     }
 }
