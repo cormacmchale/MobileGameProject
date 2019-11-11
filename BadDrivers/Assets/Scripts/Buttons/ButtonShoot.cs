@@ -15,10 +15,8 @@ public class ButtonShoot : MonoBehaviour
         shootButton = FindObjectOfType<FireBullet>();
         findAngle = FindObjectOfType<AndroidManager>();
     }
-
-    // Update is called once per frame
-    public void shoot()
+    public void Shoot()
     {
-        shootButton.shoot(findAngle.getAngle());
+        shootButton.shoot(findAngle.getthisAngle());
     }
 }

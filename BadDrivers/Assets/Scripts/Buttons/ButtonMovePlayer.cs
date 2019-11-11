@@ -28,20 +28,15 @@ public class ButtonMovePlayer : MonoBehaviour
         {
             addMovement();
         }
-        //Debug.Log(angle);
     }
 
     public void addMovement()
     {
-        //add logic of checking which button got pressed here?
         switch (transform.name)
         {
             case "Up":
                 movement = new Vector3(0.0f, getSpeed.getSpeedOfPlayer(), 0.0f);
                 getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
-                //set angle here
-                //send to android Manager
-                overlayManager.setAngle(90);
                 break;
             case "Down":
                 movement = new Vector3(0.0f, -getSpeed.getSpeedOfPlayer(), 0.0f);
@@ -61,12 +56,26 @@ public class ButtonMovePlayer : MonoBehaviour
     //this works and alters the speed based on the player speed
     public void keyDown()
     {
+        switch (transform.name)
+        {
+            case "Up":
+                overlayManager.setthisAngle(90);
+                break;
+            case "Down":
+                overlayManager.setthisAngle(-90);
+                break;
+            case "Right":
+                overlayManager.setthisAngle(0);
+                break;
+            case "Left":
+                overlayManager.setthisAngle(-180);
+                break;
+        }
         check = true;
     }
     public void keyUp()
     {
+        overlayManager.setthisAngle(-1);
         check = false;
-        //not moving
-        overlayManager.setAngle(-1);
     }
 }
