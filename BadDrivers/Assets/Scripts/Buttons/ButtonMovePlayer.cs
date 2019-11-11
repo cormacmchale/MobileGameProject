@@ -12,13 +12,14 @@ public class ButtonMovePlayer : MonoBehaviour
     private Vector3 movement;
     private bool check = false;
 
-    //set the angle that player is moving based off of button press
-    private int angle;
+    //set the angle somewhere
+    private AndroidManager overlayManager;
 
     private void Start()
     {
         //will have to work for the moment
         getSpeed = FindObjectOfType<PlayerMovement>();
+        overlayManager = FindObjectOfType<AndroidManager>();
 
     }
     void Update()
@@ -39,7 +40,8 @@ public class ButtonMovePlayer : MonoBehaviour
                 movement = new Vector3(0.0f, getSpeed.getSpeedOfPlayer(), 0.0f);
                 getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
                 //set angle here
-                angle = 90;
+                //send to android Manager
+                overlayManager.setAngle(90);
                 break;
             case "Down":
                 movement = new Vector3(0.0f, -getSpeed.getSpeedOfPlayer(), 0.0f);
@@ -65,10 +67,6 @@ public class ButtonMovePlayer : MonoBehaviour
     {
         check = false;
         //not moving
-        //angle = -1;
-    }
-    public int getAngle()
-    {
-        return angle;
+        overlayManager.setAngle(-1);
     }
 }
