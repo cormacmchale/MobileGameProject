@@ -16,7 +16,7 @@ public class FireBullet : MonoBehaviour
             firebullet();
         }
     }
-    void firebullet()
+    public void firebullet()
     {
         //put the bullet back to normal before you add correct rotation
         bullet.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
@@ -27,7 +27,7 @@ public class FireBullet : MonoBehaviour
         shoot(setDirection);
     }
     //method that reurns a single value to be used to configure dirction the bullet should fire
-    int getDirection()
+    private int getDirection()
     {
         //moving right along the X axis-- shoot straight
         if (Input.GetAxis("Horizontal") > 0 && Input.GetAxis("Vertical") == 0) return 0;
@@ -49,7 +49,7 @@ public class FireBullet : MonoBehaviour
         else return -1;
     }
     //gives the bullet the correct position and calculated angle and instantiates the bullet for firing
-    void shoot(int angle)
+    private void shoot(int angle)
     {
         //player not moving
         if (angle == -1)

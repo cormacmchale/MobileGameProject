@@ -17,7 +17,15 @@ public class playerHealth : MonoBehaviour
     }
     public void gainAheart()
     {
-        health++;
+        //so the player does not go above 5 hearts
+        if (health >= 5)
+        {
+            //do nothing
+        }
+        else
+        {
+            health++;
+        }
     }
     private void Update()
     {

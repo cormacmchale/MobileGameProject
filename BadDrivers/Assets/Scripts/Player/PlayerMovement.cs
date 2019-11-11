@@ -33,11 +33,14 @@ public class PlayerMovement : MonoBehaviour
         movementV = new Vector3(0.0f, Input.GetAxis("Vertical")*speedOfPlayer, 0.0f);
         transform.position = transform.position + movementV * Time.deltaTime;
     }
-
     public void increaseSpeed()
     {
-        Debug.Log(speedOfPlayer);
+        //Debug.Log(speedOfPlayer);
         speedOfPlayer+=2f;
+    }
+    public float getSpeedOfPlayer()
+    {
+        return speedOfPlayer;
     }
 
 }
