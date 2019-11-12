@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ea3e3bebcad4b5489e51414a1c8280c
+guid: 21459a0fe0744bf418f17bb9d88e2129
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,11 +46,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 23, y: 49, z: 35, w: 28}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -73,15 +73,7 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline:
-    - - {x: -63, y: 68}
-      - {x: -74, y: 59}
-      - {x: -74, y: -45}
-      - {x: -73, y: -50}
-      - {x: 55, y: -50}
-      - {x: 62, y: -49}
-      - {x: 62, y: 57}
-      - {x: 53, y: 68}
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000

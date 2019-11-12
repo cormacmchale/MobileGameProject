@@ -8,7 +8,6 @@ public class ButtonMovePlayer : MonoBehaviour
 {
     //will need to access the speed of the player dynamically
     private PlayerMovement getSpeed;
-    private GameObject player;
     private Vector3 movement;
     private bool check = false;
 
@@ -50,6 +49,22 @@ public class ButtonMovePlayer : MonoBehaviour
                 movement = new Vector3(-getSpeed.getSpeedOfPlayer(),0.0f, 0.0f);
                 getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
                 break;
+            case "UpLeft":
+                movement = new Vector3(-getSpeed.getSpeedOfPlayer(), getSpeed.getSpeedOfPlayer(), 0.0f);
+                getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
+                break;
+            case "UpRight":
+                movement = new Vector3(getSpeed.getSpeedOfPlayer(), getSpeed.getSpeedOfPlayer(), 0.0f);
+                getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
+                break;
+            case "DownRight":
+                movement = new Vector3(getSpeed.getSpeedOfPlayer(), -getSpeed.getSpeedOfPlayer(), 0.0f);
+                getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
+                break;
+            case "DownLeft":
+                movement = new Vector3(-getSpeed.getSpeedOfPlayer(), -getSpeed.getSpeedOfPlayer(), 0.0f);
+                getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
+                break;
         }
     }
     //possible solution?
@@ -69,6 +84,18 @@ public class ButtonMovePlayer : MonoBehaviour
                 break;
             case "Left":
                 overlayManager.setthisAngle(-180);
+                break;
+            case "UpLeft":
+                overlayManager.setthisAngle(-215);
+                break;
+            case "UpRight":
+                overlayManager.setthisAngle(45);
+                break;
+            case "DownRight":
+                overlayManager.setthisAngle(-45);
+                break;
+            case "DownLeft":
+                overlayManager.setthisAngle(-135);
                 break;
         }
         check = true;

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class SpawnTractors: MonoBehaviour
+public class SpawnTractors : MonoBehaviour
 {
+    private int MAXTRACTORS = 3;
     public EnemyTractor Tractor;
     // Start is called before the first frame update
     public GameObject TractorManager;
@@ -33,13 +34,20 @@ public class SpawnTractors: MonoBehaviour
     private void Spawn()
     {
         //maintain 3 on screen
-        if (TractorManager.transform.childCount == 3)
+        if (TractorManager.transform.childCount == MAXTRACTORS)
         {
-            return;//max 3 Tractors on screen for now??
+            return;//based on difficulty
         }
         else
         {
             Instantiate(Tractor, TractorManager.transform.position, new Quaternion(0, 0, 0, 0), TractorManager.transform);
         }
     }
+    public void increaseSpawn()
+    {
+        howOftenBetweenSpawns++;
+        timeUntilFirstSpawn++;
+        MAXTRACTORS++;
+    }
+        
 }

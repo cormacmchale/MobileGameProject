@@ -17,7 +17,6 @@ public class EnemyTruck : MonoBehaviour
         //find score manager for bikes
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
-
         rb = gameObject.GetComponent<Rigidbody2D>();
         //give it a random speed
         //these game objects need to be managed
@@ -36,7 +35,7 @@ public class EnemyTruck : MonoBehaviour
             case "EnemyBike":
                 Destroy(gameObject);
                 Destroy(col.gameObject);
-                score.decrementScore(100);
+                health.decrementHealth();
                 //animation
                 break;
             case "Player":

@@ -27,7 +27,7 @@ public class scoreManager : MonoBehaviour
     // add the player score when necesscary
     public void addScore(int score)
     {
-        Debug.Log(playerScore);
+        //Debug.Log(playerScore);
         //testing
         //multiply by number of bikes in game
         if (bikeCounter.transform.childCount>0)

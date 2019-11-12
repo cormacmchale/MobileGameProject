@@ -51,7 +51,7 @@ public class EnemyTractor : MonoBehaviour
             case "EnemyBike":
                 Destroy(gameObject);
                 Destroy(col.gameObject);
-                score.decrementScore(100);
+                health.decrementHealth();
                 //animation
                 break;
             case "Player":

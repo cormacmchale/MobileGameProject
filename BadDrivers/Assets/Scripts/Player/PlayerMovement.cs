@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     public void increaseSpeed()
     {
         //Debug.Log(speedOfPlayer);
-        speedOfPlayer+=2f;
+        speedOfPlayer+=.5f;
     }
     public float getSpeedOfPlayer()
     {

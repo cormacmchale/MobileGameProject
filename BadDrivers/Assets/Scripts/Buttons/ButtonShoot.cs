@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class ButtonShoot : MonoBehaviour
 {
-
     private FireBullet shootButton;
     private AndroidManager findAngle;
     // Start is called before the first frame update

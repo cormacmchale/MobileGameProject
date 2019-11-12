@@ -34,11 +34,12 @@ public class TimerSpeedup : MonoBehaviour
         }
 
     }
-    //this logic works, increase speed every twent seconds
+    //this logic works, increase speed every twenty seconds
     IEnumerator increasePlayerSpeed()
     {
         flagSpeed = false;
         player.increaseSpeed();
+        increaseDifficulty();
         //alert difficult script here!- pass message
         yield return new WaitForSeconds(20);
         flagSpeed = true;
@@ -47,6 +48,8 @@ public class TimerSpeedup : MonoBehaviour
     //give player an indication
     private void increaseDifficulty()
     {
-        //pass message to difficulty script
+        //pass message to difficulty Manager
+        difficultyManager.increaseDifficulty();
+        //pass message to animation manager
     }
 }

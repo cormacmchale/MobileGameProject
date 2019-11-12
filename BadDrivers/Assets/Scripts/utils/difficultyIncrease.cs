@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class difficultyIncrease : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private SpawnTractors ChangeTractorSpawn;
+
+    private void Start()
     {
-        
+        ChangeTractorSpawn = FindObjectOfType<SpawnTractors>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void increaseDifficulty()
     {
-        
+        ChangeTractorSpawn.increaseSpawn();
     }
 }
