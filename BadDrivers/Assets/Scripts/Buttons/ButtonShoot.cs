@@ -7,6 +7,7 @@ public class ButtonShoot : MonoBehaviour
 {
     private FireBullet shootButton;
     private AndroidManager findAngle;
+    private AudioManager playSounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,6 @@ public class ButtonShoot : MonoBehaviour
     public void Shoot()
     {
         shootButton.shoot(findAngle.getthisAngle());
+        //playSounds.playShootSound();
     }
 }

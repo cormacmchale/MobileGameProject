@@ -19,7 +19,8 @@ public class ButtonMovePlayer : MonoBehaviour
         //will have to work for the moment
         getSpeed = FindObjectOfType<PlayerMovement>();
         overlayManager = FindObjectOfType<AndroidManager>();
-
+        //set default can't shoot
+        overlayManager.setthisAngle(-1);
     }
     void Update()
     {

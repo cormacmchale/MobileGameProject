@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Audio : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip clip;
+    private AudioSource backGroundMusic;
+
+
+    public AudioSource shootSound;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void playShootSound()
+    {
+        shootSound.Play();
     }
 }
