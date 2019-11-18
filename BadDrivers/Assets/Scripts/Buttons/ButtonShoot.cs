@@ -14,10 +14,11 @@ public class ButtonShoot : MonoBehaviour
         //access the orginal shoot
         shootButton = FindObjectOfType<FireBullet>();
         findAngle = FindObjectOfType<AndroidManager>();
-    }
+        playSounds = FindObjectOfType<AudioManager>();
+}
     public void Shoot()
     {
         shootButton.shoot(findAngle.getthisAngle());
-        //playSounds.playShootSound();
+        playSounds.playShootSound();
     }
 }
