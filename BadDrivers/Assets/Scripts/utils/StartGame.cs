@@ -12,16 +12,16 @@ public class StartGame : MonoBehaviour
         //finish configuration from the unity GUI (inspector)
         SceneManager.LoadScene("MainLevel");
     }
-    public void pauseMenu()
+    public void audioMenu()
     {
         //load the first level when you press the start button
         //finish configuration from the unity GUI (inspector)
-        SceneManager.LoadScene("PauseMenu");
+        SceneManager.LoadScene("AudioMenu");
     }
     public void startMenu()
     {
         //load the first level when you press the start button
         //finish configuration from the unity GUI (inspector)
-        SceneManager.LoadScene("PauseMenu");
+        SceneManager.LoadScene("startMenu");
     }
 }

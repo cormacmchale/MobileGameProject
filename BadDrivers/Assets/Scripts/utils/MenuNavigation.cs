@@ -13,9 +13,9 @@ public class MenuNavigation : MonoBehaviour
         SceneManager.LoadScene("MainLevel");
     }
     //load scenes on button press
-    public void pauseMenu()
+    public void audioMenu()
     {
-        SceneManager.LoadScene("PauseMenu");
+        SceneManager.LoadScene("AudioMenu");
     }
     public void startMenu()
     {
