@@ -64,7 +64,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 				FindPairedButton();
 			}
             // update the axis and record that the button has been pressed this frame
-            Debug.Log(m_Axis.GetValueRaw);
+            Debug.Log(m_Axis.GetValue);
 			m_Axis.Update(Mathf.MoveTowards(m_Axis.GetValue, axisValue, responseSpeed * Time.deltaTime));
 		}
 

@@ -6,7 +6,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerMovementTest : MonoBehaviour
 {
     //move player speed
-    public float speed = 5f;
+    public float speed = 1.5f;
 
     private float dirX;
     private float dirY;

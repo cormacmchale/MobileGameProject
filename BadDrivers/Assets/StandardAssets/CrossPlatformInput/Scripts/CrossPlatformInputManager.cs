@@ -12,23 +12,20 @@ namespace UnityStandardAssets.CrossPlatformInput
 			Touch
 		}
 
-
 		private static VirtualInput activeInput;
-
 		private static VirtualInput s_TouchInput;
 		private static VirtualInput s_HardwareInput;
-
 
 		static CrossPlatformInputManager()
 		{
 			s_TouchInput = new MobileInput();
-			s_HardwareInput = new StandaloneInput();
-#if MOBILE_INPUT
+			//s_HardwareInput = new StandaloneInput();
+            //#if MOBILE_INPUT
             activeInput = s_TouchInput;
-#else
-			activeInput = s_HardwareInput;
-#endif
-		}
+            //#else
+            //activeInput = s_HardwareInput;
+            //	
+        }
 
 		public static void SwitchActiveInputMethod(ActiveInputMethod activeInputMethod)
 		{
