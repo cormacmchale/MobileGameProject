@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class healthManager : MonoBehaviour
@@ -16,6 +17,7 @@ public class healthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //gain aceess to the amount of health the player has for decision making
         player = FindObjectOfType<playerHealth>();   
     }
 
@@ -24,6 +26,13 @@ public class healthManager : MonoBehaviour
     {
         //get the amount of hearts that the player should have
         remainingHearts = player.getHealth();
+
+        //load Game over if there is no hearts
+        if (remainingHearts <= 0)
+        {
+            //pass score in here for display
+            SceneManager.LoadScene("GameOver");
+        }
 
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -37,6 +46,7 @@ public class healthManager : MonoBehaviour
             }
         }
     }
+    //for calling in other scripts
     public void decrementHealth()
     {
         player.loseAheart();
