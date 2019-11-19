@@ -14,7 +14,9 @@ public class PlayerMovementTest : MonoBehaviour
     void Update()
     {
         dirX = CrossPlatformInputManager.GetAxis("Horizontal") * speed * Time.deltaTime;
+        Debug.Log(CrossPlatformInputManager.GetAxis("Horizontal"));
         dirY = CrossPlatformInputManager.GetAxis("Vertical") * speed * Time.deltaTime;
+        Debug.Log(CrossPlatformInputManager.GetAxis("Vertical"));
         transform.position = new Vector2(transform.position.x+dirX, transform.position.y+dirY);
     }
 }
