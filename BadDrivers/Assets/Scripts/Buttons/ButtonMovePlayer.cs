@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ButtonMovePlayer : MonoBehaviour
 {
+
     //this script is used on the android overlay buttons for player movement
     //will need to access the speed of the player
     private PlayerMovement getSpeed;
@@ -80,6 +81,7 @@ public class ButtonMovePlayer : MonoBehaviour
         switch (transform.name)
         {
             //set the angle for button shoot in the android manager
+            //now handled with cross platform input manager
             case "Up":
                 overlayManager.setthisAngle(90);
                 break;

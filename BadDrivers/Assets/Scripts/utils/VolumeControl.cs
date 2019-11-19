@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class VolumeControl : MonoBehaviour
 {
+    //add the slider in here to access
+    public Slider slider;
+
     //access the audio manager to change settings
     private AudioManager music;
 
@@ -17,13 +20,15 @@ public class VolumeControl : MonoBehaviour
     }
 
     // Update is called once per frame
+    //set the value of volume to the slider value
     void Update()
     {
-        music.VolumeControl(Volume);
+        Debug.Log(slider.value);
+        //music.VolumeControl(Volume);
     }
     //not working yet
     public void SetVolume()
     {
-        Debug.Log("what");
+        //Debug.Log("what");
     }
 }
