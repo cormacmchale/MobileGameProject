@@ -6,17 +6,21 @@ using UnityEngine.UI;
 
 public class ButtonMovePlayer : MonoBehaviour
 {
-    //will need to access the speed of the player dynamically
+    //this script is used on the android overlay buttons for player movement
+    //will need to access the speed of the player
     private PlayerMovement getSpeed;
+    //apply a movement speed
     private Vector3 movement;
+
+    //logic for movinf only when the button is down
     private bool check = false;
 
-    //set the angle somewhere
+    //set the angle here for the shoot buttons
     private AndroidManager overlayManager;
 
     private void Start()
     {
-        //will have to work for the moment
+        //only one instance in game so no logic confusion
         getSpeed = FindObjectOfType<PlayerMovement>();
         overlayManager = FindObjectOfType<AndroidManager>();
         //set default can't shoot
@@ -24,6 +28,7 @@ public class ButtonMovePlayer : MonoBehaviour
     }
     void Update()
     {
+        //apply the movement while a key is being pressed
         if (check)
         {
             addMovement();
@@ -32,6 +37,7 @@ public class ButtonMovePlayer : MonoBehaviour
 
     public void addMovement()
     {
+        //apply correct movement for button press
         switch (transform.name)
         {
             case "Up":
@@ -68,12 +74,12 @@ public class ButtonMovePlayer : MonoBehaviour
                 break;
         }
     }
-    //possible solution?
     //this works and alters the speed based on the player speed
     public void keyDown()
     {
         switch (transform.name)
         {
+            //set the angle for button shoot in the android manager
             case "Up":
                 overlayManager.setthisAngle(90);
                 break;
@@ -99,10 +105,13 @@ public class ButtonMovePlayer : MonoBehaviour
                 overlayManager.setthisAngle(-135);
                 break;
         }
+        //move while the player pressesa button
         check = true;
     }
+    //this method will set the movement condidtion to false when a player stops pressing a key
     public void keyUp()
     {
+        //-1 means not moving and button shoot wont work
         overlayManager.setthisAngle(-1);
         check = false;
     }

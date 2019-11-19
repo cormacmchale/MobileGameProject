@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FireBullet : MonoBehaviour
 {
+
+    //this class fires a bullet on the UWP version of the game
+    //also reused by the android over-lay
+
     //placeholder for the bullet prefab 
     public Bullet bullet;
     // Update is called once per frame
@@ -47,6 +51,7 @@ public class FireBullet : MonoBehaviour
         else return -1;
     }
     //gives the bullet the correct position and calculated angle and instantiates the bullet for firing
+    //this is called from the android button shoot also
     public void shoot(int angle)
     {
         //put the bullet back to normal before you add correct rotation

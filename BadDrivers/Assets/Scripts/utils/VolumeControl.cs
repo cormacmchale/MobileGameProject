@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class VolumeControl : MonoBehaviour
 {
+    //access the audio manager to change settings
     private AudioManager music;
 
     private float Volume = 1f;
@@ -20,7 +21,7 @@ public class VolumeControl : MonoBehaviour
     {
         music.VolumeControl(Volume);
     }
-
+    //not working yet
     public void SetVolume()
     {
         Debug.Log("what");

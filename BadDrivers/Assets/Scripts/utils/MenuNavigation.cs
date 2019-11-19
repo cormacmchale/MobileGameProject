@@ -12,6 +12,7 @@ public class MenuNavigation : MonoBehaviour
         //finish configuration from the unity GUI (inspector)
         SceneManager.LoadScene("MainLevel");
     }
+    //load scenes on button press
     public void pauseMenu()
     {
         SceneManager.LoadScene("PauseMenu");
