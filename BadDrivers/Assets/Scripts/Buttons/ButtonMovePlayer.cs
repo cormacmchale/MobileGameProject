@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class ButtonMovePlayer : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class ButtonMovePlayer : MonoBehaviour
 
     public void addMovement()
     {
+
         //apply correct movement for button press
         switch (transform.name)
         {
