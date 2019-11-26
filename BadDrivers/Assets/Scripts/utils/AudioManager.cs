@@ -17,12 +17,15 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         GameObject[] singletonCheck = GameObject.FindGameObjectsWithTag("MusicSingleton");
-        if (singletonCheck.Length > 1) Destroy(gameObject);
-        //keep everything safe
-        //works correctly on android
-        DontDestroyOnLoad(BackGround);
-        DontDestroyOnLoad(Shoot);
-        DontDestroyOnLoad(gameObject);
+        if (singletonCheck.Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            //keep everything safe       
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     // Start is called before the first frame update

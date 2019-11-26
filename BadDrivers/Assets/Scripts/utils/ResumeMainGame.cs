@@ -17,13 +17,11 @@ public class ResumeMainGame : MonoBehaviour
     {
         pauseView.SetActive(false);
         Time.timeScale = 1f;
-        pauseAudio.VolumeControl(1);
     }
     public void MainMenu()
     {
         pauseView.SetActive(false);
         Time.timeScale = 1f;
-        pauseAudio.VolumeControl(1);
         SceneManager.LoadScene("StartMenu");
     }
 }
