@@ -27,12 +27,6 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
- 
-    }
     //methods for playing the shoot sound in other classes
     public void playShootSound()
     {
@@ -43,9 +37,24 @@ public class AudioManager : MonoBehaviour
     {
         BackGround.volume = volume;
     }
-    //method for turning of sound affects
-    public void muteSound()
+    //for pausing and restarting with the same sound.. and for setting the value of the slider fomr the singleton
+    public float getVolume()
     {
-        //use boolean here
+        return BackGround.volume;
+    }
+    //method for turning of sound affects
+    public void muteSfx()
+    {
+        if (sfx)
+        {
+            //use boolean here
+            //all sfx must go here
+            Shoot.volume = 0.0f;
+            sfx = false;
+        }
+        else
+        {
+            Shoot.volume = 1.0f;
+        }
     }
 }

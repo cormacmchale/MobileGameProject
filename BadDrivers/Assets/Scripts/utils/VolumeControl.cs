@@ -15,7 +15,9 @@ public class VolumeControl : MonoBehaviour
     void Start()
     {
         music = FindObjectOfType<AudioManager>();
-        //slider = GetComponentInChildren<Slider>();
+        //set the volume on return
+        //to the value set previously
+        slider.value = music.getVolume();
     }
     // Update is called once per frame
     //set the value of volume to the slider value
