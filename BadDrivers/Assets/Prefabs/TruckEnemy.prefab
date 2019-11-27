@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5250379589514517153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 2.6244855, z: -15}
+  m_LocalPosition: {x: 6, y: -0.11001301, z: -15}
   m_LocalScale: {x: 0.102311, y: 0.203561, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   truckSpeed: -2.5
   score: {fileID: 0}
   health: {fileID: 0}
+  anims: {fileID: 0}
 --- !u!61 &5250379589514517159
 BoxCollider2D:
   m_ObjectHideFlags: 0

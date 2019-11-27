@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{
-    //placholders for sound
+{   //placholders for sound
     [SerializeField]
     private AudioSource Shoot;
     [SerializeField]
     private AudioSource BackGround;
-
+    [SerializeField]
+    private AudioSource Explosion;
     //for keeping track of the sounds being set on or off
     private bool sfxCondition = true;
-
     //make this a singelton
     private void Awake()
     {

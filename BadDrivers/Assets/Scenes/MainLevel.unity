@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tractor: {fileID: 5551385972801001539, guid: 0c7caa8d6acd6f94a95dc120135a6296, type: 3}
   TractorManager: {fileID: 310348324}
-  spawnTractors: 1
+  spawnTractors: 0
   howOftenBetweenSpawns: 10
   timeUntilFirstSpawn: 2
 --- !u!4 &248023521
@@ -863,7 +863,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593708360
 GameObject:
@@ -2345,7 +2345,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1003475614
 MonoBehaviour:
@@ -2545,7 +2545,7 @@ RectTransform:
   m_Children:
   - {fileID: 355499182}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bike: {fileID: 26715059572250729, guid: e9452d4c3ced1194a96e28f55de844a7, type: 3}
   BikeManager: {fileID: 1654564295}
-  spawnBikes: 1
+  spawnBikes: 0
   howOftenBetweenSpawns: 6
   timeUntilFirstSpawn: 1
 --- !u!114 &1210068913
@@ -3055,7 +3055,7 @@ RectTransform:
   - {fileID: 2030237468}
   - {fileID: 629013260}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3123,7 +3123,7 @@ MonoBehaviour:
   Ambulance: {fileID: 9117307199833331811, guid: 93d84ac07f7c44c4a9e7c1b0939a4a17,
     type: 3}
   ambulanceManager: {fileID: 602236653}
-  spawnAmbulance: 1
+  spawnAmbulance: 0
   howOftenBetweenSpawns: 35
   timeUntilFirstSpawn: 3
 --- !u!1001 &1402110155
@@ -3547,7 +3547,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1541601732
 GameObject:
@@ -4637,6 +4637,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600a70eca5b7f2445aa45cbb9e8876eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1859691315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859691317}
+  - component: {fileID: 1859691316}
+  m_Layer: 0
+  m_Name: AnimationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1859691316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859691315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad591f23e39ce548bb151771f0e0d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1859691317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859691315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.38, y: -3.86, z: -903.10156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870158314
 GameObject:
   m_ObjectHideFlags: 0

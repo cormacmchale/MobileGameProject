@@ -12,14 +12,17 @@ public class EnemyTruck : MonoBehaviour
     private float truckSpeed;
     private Rigidbody2D rb;
     // Start is called before the first frame update
+    // access managers
     public scoreManager score;
     public healthManager health;
+    public AnimationManager anims;
 
     void Start()
     {
         //find the managers for correct health and score keeping
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
+        //anims = FindObjectOfType<AnimationManager>();
         //give it a random speed
         //these game objects need to be managed
         //gameobjects managed by colliders
@@ -45,6 +48,7 @@ public class EnemyTruck : MonoBehaviour
             case "Player":
                 Destroy(gameObject);
                 health.decrementHealth();
+                //anims.Explosion();
                 //animation
                 break;
             default:
