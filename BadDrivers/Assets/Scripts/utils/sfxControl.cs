@@ -15,11 +15,14 @@ public class sfxControl : MonoBehaviour
     void Start()
     {
         music = FindObjectOfType<AudioManager>();
+        //keep the settings from previous time in menu
+        toggle.isOn = music.getSfxCondition();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(toggle.isOn);
+        //pass in the true false for sfx being on
+        music.interactSfx(toggle.isOn);
     }
 }

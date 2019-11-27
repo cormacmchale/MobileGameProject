@@ -10,8 +10,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource BackGround;
 
-    //boolean for sound affect
-    private bool sfx = true;
+    //for keeping track of the sounds being set on or off
+    private bool sfxCondition = true;
 
     //make this a singelton
     private void Awake()
@@ -37,24 +37,31 @@ public class AudioManager : MonoBehaviour
     {
         BackGround.volume = volume;
     }
-    //for pausing and restarting with the same sound.. and for setting the value of the slider fomr the singleton
+    //for pausing and restarting with the same sound.. and for setting the value of the slider from the singleton
     public float getVolume()
     {
         return BackGround.volume;
     }
     //method for turning of sound affects
-    public void muteSfx()
+    public void interactSfx(bool sfxToggle)
     {
-        if (sfx)
+        if (sfxToggle)
         {
             //use boolean here
-            //all sfx must go here
-            Shoot.volume = 0.0f;
-            sfx = false;
-        }
-        else
-        {
+            //all sfx audio must change here
             Shoot.volume = 1.0f;
+            sfxCondition = true;
         }
+        else //teh toggle is set to false - unticked
+        {
+            //mute all sounds
+            Shoot.volume = 0.0f;
+            sfxCondition = false;
+        }
+    }
+    //set the toggle to the singleton value when it entes the menu
+    public bool getSfxCondition()
+    {
+        return sfxCondition;
     }
 }
