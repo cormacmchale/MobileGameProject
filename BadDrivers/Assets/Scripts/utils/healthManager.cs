@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class healthManager : MonoBehaviour
 {
@@ -14,11 +16,17 @@ public class healthManager : MonoBehaviour
     //get the players health
     private playerHealth player;
     private int remainingHearts;
+
+    //get the score manager so we can write Score to file for first
+    private scoreManager scoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
         //gain aceess to the amount of health the player has for decision making
-        player = FindObjectOfType<playerHealth>();   
+        player = FindObjectOfType<playerHealth>();
+        //get hold of score manager for svaing score
+        scoreManager = FindObjectOfType<scoreManager>();
     }
 
     // Update is called once per frame
@@ -30,7 +38,12 @@ public class healthManager : MonoBehaviour
         //load Game over if there is no hearts
         if (remainingHearts <= 0)
         {
-            //pass score in here for display
+            //save score to a file
+            //save next time onto a new line
+            StreamWriter w = File.AppendText(Application.dataPath + "/highscore.txt");
+            w.WriteLine(scoreManager.returnScore());
+            w.Close();
+            //load new scene
             SceneManager.LoadScene("GameOver");
         }
 

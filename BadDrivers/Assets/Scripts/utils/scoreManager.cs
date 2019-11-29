@@ -44,4 +44,9 @@ public class scoreManager : MonoBehaviour
     {
         overallScore.Enqueue(score*-1);
     }
+    //score will need to be accessed for saving ti file
+    public int returnScore()
+    {
+        return playerScore;
+    }
 }

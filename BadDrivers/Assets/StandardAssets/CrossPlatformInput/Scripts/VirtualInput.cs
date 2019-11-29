@@ -39,10 +39,6 @@ namespace UnityStandardAssets.CrossPlatformInput
             }
             else
             {
-                // add any new axes
-                Debug.Log("Registering "+axis.name);
-                m_VirtualAxes.Add(axis.name, axis);
-
                 // if we dont want to match with the input manager setting then revert to always using virtual
                 if (!axis.matchWithInputManager)
                 {
