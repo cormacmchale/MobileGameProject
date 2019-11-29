@@ -19,7 +19,7 @@ public class highScoreManager : MonoBehaviour
     {
         //highscore should be the first number in the file always
         //the main level will append the latest score
-        highscores = File.ReadAllLines(Application.dataPath + "/highscore.txt");
+        highscores = File.ReadAllLines(Application.persistentDataPath+ "/highscore.txt");
         //so if there is only one score
         //highscores.length==1
         //display player score and high score
@@ -54,7 +54,7 @@ public class highScoreManager : MonoBehaviour
     //lower score deleted by default
     private void OnDestroy()
     {
-        StreamWriter w = new StreamWriter(Application.dataPath + "/highscore.txt");
+        StreamWriter w = new StreamWriter(Application.persistentDataPath + "/highscore.txt");
         //overwrite with the highscore
         w.WriteLine(highScore.text);
         w.Close();

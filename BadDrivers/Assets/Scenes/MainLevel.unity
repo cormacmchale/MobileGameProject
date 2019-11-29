@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tractor: {fileID: 5551385972801001539, guid: 0c7caa8d6acd6f94a95dc120135a6296, type: 3}
   TractorManager: {fileID: 310348324}
-  spawnTractors: 0
+  spawnTractors: 1
   howOftenBetweenSpawns: 10
   timeUntilFirstSpawn: 2
 --- !u!4 &248023521
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bike: {fileID: 26715059572250729, guid: e9452d4c3ced1194a96e28f55de844a7, type: 3}
   BikeManager: {fileID: 1654564295}
-  spawnBikes: 0
+  spawnBikes: 1
   howOftenBetweenSpawns: 6
   timeUntilFirstSpawn: 1
 --- !u!114 &1210068913

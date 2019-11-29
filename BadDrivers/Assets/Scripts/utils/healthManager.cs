@@ -4,8 +4,6 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
-
 public class healthManager : MonoBehaviour
 {
 
@@ -40,7 +38,7 @@ public class healthManager : MonoBehaviour
         {
             //save score to a file
             //save next time onto a new line
-            StreamWriter w = File.AppendText(Application.dataPath + "/highscore.txt");
+            StreamWriter w = File.AppendText(Application.persistentDataPath + "/highscore.txt");
             w.WriteLine(scoreManager.returnScore());
             w.Close();
             //load new scene
