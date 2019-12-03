@@ -8,5 +8,5 @@ The aim of the Game is simple enough. Use the buttons on screen to move the car 
 Gameplay Screen
 ======
 
-![GitHub Logo](/images/logo.png)
+![GamePlay](/BadDrivers/Assets/GitImages/Capture.png)
 Format: ![Alt Text](url)
