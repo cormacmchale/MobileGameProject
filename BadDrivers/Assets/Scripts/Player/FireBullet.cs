@@ -7,6 +7,13 @@ public class FireBullet : MonoBehaviour
 
     //this class fires a bullet on the UWP version of the game
     //also reused by the android over-lay
+    //will need audio manage for shoot sound
+    private AudioManager shootSound;
+    private void Start()
+    {
+        //find manager when level starts
+        shootSound = FindObjectOfType<AudioManager>();
+    }
 
     //placeholder for the bullet prefab 
     public Bullet bullet;
@@ -61,6 +68,8 @@ public class FireBullet : MonoBehaviour
         { return; }
         bullet.transform.position = transform.position;
         bullet.transform.Rotate(Vector3.forward * angle);
+        //play sound effect and shoot bullet
+        shootSound.playShootSound();
         Instantiate(bullet);
     }
 }
