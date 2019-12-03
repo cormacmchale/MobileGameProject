@@ -7,5 +7,4 @@ The aim of the Game is simple enough. Use the buttons on screen to move the car 
  
 Gameplay Screen
 ======
-
 ![GamePlay](https://github.com/cormacmchale/MobileGameProject/blob/master/BadDrivers/Assets/GitImages/Capture.PNG)
