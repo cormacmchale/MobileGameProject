@@ -4,35 +4,37 @@ using UnityEngine;
 
 public class EnemyTruck : MonoBehaviour
 {
-    //this script for the spwaner to find and instatiate enemy trucks
-
-    //pass this to diffculty management system??
+    //this script is used by the spwaner to instatiate enemy trucks
     //small logic for movement when created
     [SerializeField]
     private float truckSpeed;
     private Rigidbody2D rb;
-    // Start is called before the first frame update
+
     // access managers
     private scoreManager score;
     private healthManager health;
     private AudioManager sound;
 
+    //placeholder for animation
     [SerializeField]
     private GameObject explosion;
 
+    // Start is called before the first frame update
     void Start()
     {
-        //find the managers for correct health and score keeping and playing sounds
+        //find the managers for correct health, score keeping and playing sounds on collision
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
         sound = FindObjectOfType<AudioManager>();
+        
         //give it a random speed
-        //these game objects need to be managed
         //gameobjects managed by colliders
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * truckSpeed;
     }
+
     //handle logic for collisions here
+    //on collision check what it collided with and call the appropriate methods on managers
     void OnCollisionEnter2D(Collision2D col)
     {
         switch (col.gameObject.tag)
@@ -50,11 +52,10 @@ public class EnemyTruck : MonoBehaviour
                 sound.playExplosion();
                 Destroy(gameObject);
                 health.decrementHealth();
-                //anims.Explosion();
-                //animation
                 break;
+            //error handling
             default:
-                //Debug.Log("You shouldn't see this, check where this bullet went");
+                Debug.Log("You shouldn't see this, check where this bullet went");
                 break;
         }
     }

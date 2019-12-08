@@ -9,8 +9,7 @@ public class EnemyTractor : MonoBehaviour
     //have access to the array of transforms
     Transform[] followThis;
 
-    // Start is called before the first frame update
-    // access managers
+    //access managers
     private scoreManager score;
     private healthManager health;
     private AudioManager sound;
@@ -18,8 +17,10 @@ public class EnemyTractor : MonoBehaviour
     //used for holder the next point in the path
     private int nextMove;
 
+    //movement speed
     [SerializeField]
     private float speed;
+
     //placeholder for explosion
     [SerializeField]
     private GameObject explosion;
@@ -52,7 +53,9 @@ public class EnemyTractor : MonoBehaviour
         //return a random point in the array
         return Random.Range(0,followThis.Length);
     }
+
     //add logic for collisions
+    //check collision and call appropriate methods
     void OnCollisionEnter2D(Collision2D col)
     {
         switch (col.gameObject.tag)
@@ -63,17 +66,16 @@ public class EnemyTractor : MonoBehaviour
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 health.decrementHealth();
-                //animation
                 break;
             case "Player":
                 Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
                 sound.playExplosion();
                 Destroy(gameObject);
                 health.decrementHealth();
-                //animation
                 break;
+            //error handling
             default:
-                //Debug.Log("You shouldn't see this, check where this bullet went");
+                Debug.Log("You shouldn't see this, check where this bullet went");
                 break;
         }
     }

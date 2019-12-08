@@ -14,11 +14,11 @@ public class sfxControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //acess manager for settings configuration
         music = FindObjectOfType<AudioManager>();
         //keep the settings from previous time in menu
         toggle.isOn = music.getSfxCondition();
     }
-
     // Update is called once per frame
     void Update()
     {

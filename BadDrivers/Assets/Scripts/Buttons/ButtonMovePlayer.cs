@@ -14,7 +14,7 @@ public class ButtonMovePlayer : MonoBehaviour
     //apply a movement speed
     private Vector3 movement;
 
-    //logic for movinf only when the button is down
+    //logic for moving only when the button is down
     private bool check = false;
 
     //set the angle here for the shoot buttons
@@ -25,7 +25,7 @@ public class ButtonMovePlayer : MonoBehaviour
         //only one instance in game so no logic confusion
         getSpeed = FindObjectOfType<PlayerMovement>();
         overlayManager = FindObjectOfType<AndroidManager>();
-        //set default can't shoot
+        //set default - can't shoot
         overlayManager.setthisAngle(-1);
     }
     void Update()
@@ -43,6 +43,7 @@ public class ButtonMovePlayer : MonoBehaviour
         //apply correct movement for button press
         switch (transform.name)
         {
+            //correct direction added as player speed to a particular axis position
             case "Up":
                 movement = new Vector3(0.0f, getSpeed.getSpeedOfPlayer(), 0.0f);
                 getSpeed.transform.position = getSpeed.transform.position + movement * Time.deltaTime;
@@ -82,8 +83,8 @@ public class ButtonMovePlayer : MonoBehaviour
     {
         switch (transform.name)
         {
+            //android manager here working as a plcaholder for the angle so the shoot button can access to be able to shoot or not
             //set the angle for button shoot in the android manager
-            //now handled with cross platform input manager
             case "Up":
                 overlayManager.setthisAngle(90);
                 break;
@@ -109,7 +110,7 @@ public class ButtonMovePlayer : MonoBehaviour
                 overlayManager.setthisAngle(-135);
                 break;
         }
-        //move while the player pressesa button
+        //move while the player presses button
         check = true;
     }
     //this method will set the movement condidtion to false when a player stops pressing a key

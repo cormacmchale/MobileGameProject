@@ -5,16 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class ResumeMainGame : MonoBehaviour
 {
-    public GameObject pauseView;
+    //for acessing the pauseView UI panel
+    [SerializeField]
+    private GameObject pauseView;
+    
+    //get appropriate managers for preserving logic in game
     private AudioManager pauseAudio;
     private PauseMainGame resetVolume;
 
     private void Start()
     {
+        //find managers
         pauseAudio = FindObjectOfType<AudioManager>();
         resetVolume = FindObjectOfType<PauseMainGame>();
     }
-    //simple pause
+    //simple resume
     public void ResumeGame()
     {
         pauseView.SetActive(false);
@@ -22,6 +27,7 @@ public class ResumeMainGame : MonoBehaviour
         pauseAudio.VolumeControl(resetVolume.resumeVolume());
         Time.timeScale = 1f;
     }
+    //simple return to main menu
     public void MainMenu()
     {
         pauseView.SetActive(false);

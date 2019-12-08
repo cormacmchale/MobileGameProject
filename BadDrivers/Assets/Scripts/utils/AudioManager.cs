@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{   //placholders for sound
+{  
+    //placholders for sound
     [SerializeField]
     private AudioSource Shoot;
     [SerializeField]

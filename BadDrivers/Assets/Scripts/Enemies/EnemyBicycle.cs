@@ -6,8 +6,8 @@ public class EnemyBicycle : MonoBehaviour
 {
     //find the player
     private GameObject player;
-    private float outOfboundsLeftDown = -10.0f;
-    private float outOfboundsUpRight = 10.0f;
+    
+    //for keeping the bike straight on screen
     private Quaternion reduceBikeMovement = new Quaternion();
 
     //for managing movement

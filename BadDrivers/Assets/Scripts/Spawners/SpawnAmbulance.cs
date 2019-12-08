@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 public class SpawnAmbulance : MonoBehaviour
 {
-    //add an ambulance to the spawner
-    public Ambulance Ambulance;
-    public GameObject ambulanceManager;
-
+    //placeholder for instantiating and managing
     [SerializeField]
-    private bool spawnAmbulance = false;
+    private Ambulance Ambulance;
+    [SerializeField]
+    private GameObject ambulanceManager;
+
+    //testing
+    [SerializeField]
+    private bool spawnAmbulance = true;
 
     //good to have these for increasing difficulty
     [SerializeField]
@@ -19,13 +22,14 @@ public class SpawnAmbulance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //testing logic
         if (spawnAmbulance)
         {
             SpawnRepeating();
         }
     }
 
-    //spawn the trucks randomly
+    //spawn the ambulances repeatedly
     private void SpawnRepeating()
     {
         InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);

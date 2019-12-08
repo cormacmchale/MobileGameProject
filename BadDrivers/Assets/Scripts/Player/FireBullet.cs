@@ -31,7 +31,6 @@ public class FireBullet : MonoBehaviour
     {
         //return a value for direction
         int setDirection = getDirection();
-        //Debug.Log(setDirection);
         //depending on direction value add correct rotation
         shoot(setDirection);
     }

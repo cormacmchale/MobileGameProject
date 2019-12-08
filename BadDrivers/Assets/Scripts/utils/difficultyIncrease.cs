@@ -9,6 +9,7 @@ public class difficultyIncrease : MonoBehaviour
     private SpawnRandomTruck ChangeTruckSpawn;
     private SpawnAmbulance ChangeAmbulanceSpawn;
 
+    //almost like an observer pattern
     private void Start()
     {
         //find the spawners

@@ -11,13 +11,8 @@ public class PlayerMovement : MonoBehaviour
     //this will be incremented by timer
     private float speedOfPlayer = 1.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    //Update is called once per frame
+    //movement based off of axis input
     void Update()
     {
         movePlayer();
@@ -33,11 +28,12 @@ public class PlayerMovement : MonoBehaviour
         movementV = new Vector3(0.0f, Input.GetAxis("Vertical")*speedOfPlayer, 0.0f);
         transform.position = transform.position + movementV * Time.deltaTime;
     }
+    //for incrasing from the timer
     public void increaseSpeed()
     {
-        //Debug.Log(speedOfPlayer);
         speedOfPlayer+=.5f;
     }
+    //functional method
     public float getSpeedOfPlayer()
     {
         return speedOfPlayer;

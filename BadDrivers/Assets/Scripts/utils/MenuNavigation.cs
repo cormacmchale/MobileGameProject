@@ -15,10 +15,14 @@ public class MenuNavigation : MonoBehaviour
     //load scenes on button press
     public void audioMenu()
     {
+        //load the first level when you press the start button
+        //finish configuration from the unity GUI (inspector)
         SceneManager.LoadScene("AudioMenu");
     }
     public void startMenu()
     {
+        //load the first level when you press the start button
+        //finish configuration from the unity GUI (inspector)
         SceneManager.LoadScene("StartMenu");
     }
 }

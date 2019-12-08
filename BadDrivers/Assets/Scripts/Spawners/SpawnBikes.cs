@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class SpawnBikes : MonoBehaviour
 {
+    //placeholders for spawning and managing bikes
     [SerializeField]
     private EnemyBicycle Bike;
-    //spawn bikes into here
     [SerializeField]
     private GameObject BikeManager;
 
+    //testing
     [SerializeField]
-    private bool spawnBikes = false;
+    private bool spawnBikes = true;
 
     //spawning variables
     //good to have these for increasing difficulty
@@ -23,13 +24,13 @@ public class SpawnBikes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //may not need
+        //testing logic
         if (spawnBikes)
         {
             SpawnRepeating();
         }
     }
-    //spawn the trucks randomly
+    //spawn the bikes repeatedly
     private void SpawnRepeating()
     {
         InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);
@@ -40,24 +41,11 @@ public class SpawnBikes : MonoBehaviour
         //and for managing amount of bikes on screen
         if (BikeManager.transform.childCount == 5)
         {
-            return;//max 5 bikes on screen for now??
+            return;//max 5 bikes on screen
         }
         else
         {
             Instantiate(Bike, BikeManager.transform.position, new Quaternion(0,0,0,0), BikeManager.transform);
-        }
-    }
-    public void spawnBIke()
-    {
-        //maintain 5 on screen
-        //and for managing amount of bikes on screen
-        if (BikeManager.transform.childCount == 5)
-        {
-            return;//max 5 bikes on screen for now??
-        }
-        else
-        {
-            Instantiate(Bike, BikeManager.transform.position, new Quaternion(0, 0, 0, 0), BikeManager.transform);
         }
     }
 }

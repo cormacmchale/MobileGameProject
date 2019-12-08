@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 public class SpawnTractors : MonoBehaviour
 {
+    //inital value for how many tractors can be on screen at once
     private int MAXTRACTORS = 3;
-    public EnemyTractor Tractor;
-    // Start is called before the first frame update
-    public GameObject TractorManager;
 
+    //placehoolders for spawning and managing teh tractors
+    [SerializeField]
+    private EnemyTractor Tractor;
+    [SerializeField]
+    private GameObject TractorManager;
+
+    //for testing
     [SerializeField]
     private bool spawnTractors = false;
 
@@ -18,15 +23,17 @@ public class SpawnTractors : MonoBehaviour
     [SerializeField]
     private float timeUntilFirstSpawn;
 
+    // Start is called before the first frame update
     void Start()
     {
+        //testing logic
         if (spawnTractors)
         {
             SpawnRepeating();
         }
     }
 
-    //spawn the trucks randomly
+    //spawn the tractors repeatedly
     private void SpawnRepeating()
     {
         InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);

@@ -6,6 +6,7 @@ using UnityEngine;
     //**
 public class AddWireFrame : MonoBehaviour
 {
+        //default
         // use this to draw a shape to make it visible
         private void OnDrawGizmos()
         {

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class SpawnRandomTruck : MonoBehaviour
 {
-    public EnemyTruck Truck;
-    public Camera main;
+    //placeholder for the truck prefab
+    [SerializeField]
+    private EnemyTruck Truck;
+    //place bounds on the spawner
+    [SerializeField]
+    private Camera main;
     //random position to spawn truck in relation to camera
     private Vector3 pickRandom;
 
@@ -16,18 +20,20 @@ public class SpawnRandomTruck : MonoBehaviour
     [SerializeField]
     private float timeUntilFirstSpawn;
 
+    //testing
     [SerializeField]
-    private bool spawnTrucks = false;
+    private bool spawnTrucks = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        //testing logic
         if (spawnTrucks)
         {
             SpawnRepeating();
         }
     }
-    //spawn the trucks randomly
+    //spawn the trucks randomly and repeatedly
     private void SpawnRepeating()
     {
         InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);
@@ -56,5 +62,4 @@ public class SpawnRandomTruck : MonoBehaviour
             //max difficulty achieved
         }
     }
-
 }

@@ -8,8 +8,10 @@ public class healthManager : MonoBehaviour
 {
 
     //holders for images
-    public Sprite heart;
-    public Image[] hearts;
+    [SerializeField]
+    private Sprite heart;
+    [SerializeField]
+    private Image[] hearts;
 
     //get the players health
     private playerHealth player;
@@ -32,7 +34,6 @@ public class healthManager : MonoBehaviour
     {
         //get the amount of hearts that the player should have
         remainingHearts = player.getHealth();
-
         //load Game over if there is no hearts
         if (remainingHearts <= 0)
         {
@@ -44,7 +45,7 @@ public class healthManager : MonoBehaviour
             //load new scene
             SceneManager.LoadScene("GameOver");
         }
-
+        //logic for displaying the number of hearts the player has
         for (int i = 0; i < hearts.Length; i++)
         {
             if (i < remainingHearts)
@@ -58,6 +59,7 @@ public class healthManager : MonoBehaviour
         }
     }
     //for calling in other scripts
+    //updating on collision untilities
     public void decrementHealth()
     {
         player.loseAheart();

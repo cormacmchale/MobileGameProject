@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //get a handle on all managers for shooting an enemy
+    //get a handle on all managers for shooting an enemy correctly
     private scoreManager score;
     private healthManager health;
-    private AudioManager audio;
+    private AudioManager sound;
 
+    //speed of bullet
     [SerializeField]
     private float thrust = 10.0f;
-    //gameObject management
-    private float outOfboundsLeftDown = -10.0f;
-    private float outOfboundsUpRight = 10.0f;
-    private Vector2 stopMovement = new Vector2(0,0);
 
     //use this to move the bullet
     public Rigidbody2D shoot;
@@ -32,39 +29,40 @@ public class Bullet : MonoBehaviour
         //only one instance of these managers
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
-        audio = FindObjectOfType<AudioManager>();
+        sound = FindObjectOfType<AudioManager>();
     }
 
+    //when the bullet collides with something 
+    //call appropriate methods on managers
     void OnCollisionEnter2D(Collision2D col)
     {
-        //Debug.Log(col.gameObject.tag);
-        //destroy based on name
         switch(col.gameObject.tag)
         {
             case "EnemyTruck":
                 Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
-                audio.playExplosion();
+                sound.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 score.addScore(20);
                 break;
             case "EnemyTractor":
                 Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
-                audio.playExplosion();
+                sound.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 score.addScore(30);
                 break;
             case "Ambulance":
                 Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
-                audio.playExplosion();
+                sound.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 score.addScore(50);
                 health.incrementHealth();
                 break;
+                //error handling
             default:
-                //Debug.Log("You shouldn't see this, check where this bullet went");
+                Debug.Log("You shouldn't see this, check where this bullet went");
                 break;
         }
     }

@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class TimerSpeedup : MonoBehaviour
 {
+    //variables for displaying the time
     private Text timerUI;
     private float timeInSec = 0;
     private float displayTime;
+    
+    //difficulty manager will have to increase difficulty globally every 20 seconds
     private difficultyIncrease difficultyManager;
-    //Start is called before the first frame update
+
+    //increase speed according to timer
     private PlayerMovement player;
     private bool flagSpeed = true;
 
+    //Start is called before the first frame update
     void Start()
     {
+        //get access to required components for logic as per design spec
         timerUI = GetComponent<Text>();
         player = FindObjectOfType<PlayerMovement>();
         difficultyManager = FindObjectOfType<difficultyIncrease>();
@@ -24,9 +30,10 @@ public class TimerSpeedup : MonoBehaviour
     {
         //display time for user
         timeInSec += Time.deltaTime;
+        //format correctly
         displayTime = Mathf.Floor(timeInSec);
         timerUI.text = displayTime.ToString();
-
+        //come into this method first
         if (flagSpeed)
         {
             //increase speed on time
@@ -42,6 +49,7 @@ public class TimerSpeedup : MonoBehaviour
         yield return new WaitForSeconds(20);
         player.increaseSpeed();
         increaseDifficulty();
+        //re-enter in update and repeat every 20 seconds
         flagSpeed = true;
     }
     //increase difficulty here accross the board
@@ -50,6 +58,5 @@ public class TimerSpeedup : MonoBehaviour
     {
         //pass message to difficulty Manager
         difficultyManager.increaseDifficulty();
-        //pass message to animation manager
     }
 }
