@@ -42,8 +42,19 @@ public class SpawnRandomTruck : MonoBehaviour
     //for increasing the difficulty
     public void increaseSpawn()
     {
-        howOftenBetweenSpawns += 5f;
-        timeUntilFirstSpawn += 5f;
+        //stop invoke
+        //adjust difficulty
+        //re-invoke
+        if (howOftenBetweenSpawns > 1)
+        {
+            CancelInvoke();
+            howOftenBetweenSpawns -= 1f;
+            InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);
+        }
+        else
+        {
+            //max difficulty achieved
+        }
     }
 
 }

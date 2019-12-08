@@ -37,12 +37,20 @@ public class SpawnAmbulance : MonoBehaviour
     //for increasing the difficulty
     public void increaseSpawn()
     {
-       //stop the orignal spanwer
-       CancelInvoke();
-       //update the values
-       howOftenBetweenSpawns += 1f;
-       timeUntilFirstSpawn = 1f; // so the break dosen't become too long in the incease of difficulty
-       //start invoke repeating again with new values
-       InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);
+        if (timeUntilFirstSpawn <= 14)
+        {
+            //stop the orignal spanwer
+            CancelInvoke();
+            //update the values
+            howOftenBetweenSpawns += 1f;
+            timeUntilFirstSpawn = 3f; // so the break dosen't become too long in the incease of difficulty
+            //start invoke repeating again with new values
+            InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);
+        }
+        else
+        {
+            //max difficulty achieved
+            //one ambulance per difficulty increase
+        }
     }
 }

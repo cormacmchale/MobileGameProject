@@ -195,9 +195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tractor: {fileID: 5551385972801001539, guid: 0c7caa8d6acd6f94a95dc120135a6296, type: 3}
   TractorManager: {fileID: 310348324}
-  spawnTractors: 0
+  spawnTractors: 1
   howOftenBetweenSpawns: 10
-  timeUntilFirstSpawn: 2
+  timeUntilFirstSpawn: 10
 --- !u!4 &248023521
 Transform:
   m_ObjectHideFlags: 0
@@ -637,9 +637,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Truck: {fileID: 5250379589514517157, guid: 4392f5f7ccaf6c0428d97375b9f96484, type: 3}
   main: {fileID: 519420031}
-  howOftenBetweenSpawns: 3
+  howOftenBetweenSpawns: 5
   timeUntilFirstSpawn: 1
-  spawnTrucks: 0
+  spawnTrucks: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,7 +2659,7 @@ MonoBehaviour:
   ambulanceManager: {fileID: 602236653}
   spawnAmbulance: 1
   howOftenBetweenSpawns: 5
-  timeUntilFirstSpawn: 5
+  timeUntilFirstSpawn: 3
 --- !u!1001 &1402110155
 PrefabInstance:
   m_ObjectHideFlags: 0
