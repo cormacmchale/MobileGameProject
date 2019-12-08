@@ -46,5 +46,5 @@ Test Plan
 
 Extras
 ======
-## The following is a link to a part of the git repo where I pulled down and re-configured a package for allowing movement from button presses on android
+## The following is a link to a part of the git repo where I re-configured a package for allowing movement from button presses on android
  * [Cross Platform Input Manager](https://github.com/cormacmchale/MobileGameProject/tree/master/BadDrivers/Assets/StandardAssets)
