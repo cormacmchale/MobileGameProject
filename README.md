@@ -12,3 +12,24 @@ Game Screens
 ![GamePlay](https://github.com/cormacmchale/MobileGameProject/blob/master/BadDrivers/Assets/GitImages/GamePlay.PNG)
 ![Pause](https://github.com/cormacmchale/MobileGameProject/blob/master/BadDrivers/Assets/GitImages/PauseMenu.PNG)
 ![GameOver](https://github.com/cormacmchale/MobileGameProject/blob/master/BadDrivers/Assets/GitImages/GameOver.PNG)
+
+Developer Diary
+======
+
+The entire development has been documented under the following headings.  
+
+ * [The On-screen Timer](https://github.com/cormacmchale/MobileGameProject/issues/16)  
+ * [Porting to android - Scaling, Movement and shooting](https://github.com/cormacmchale/MobileGameProject/issues/15)  
+ * [Adding Explosion Animations](https://github.com/cormacmchale/MobileGameProject/issues/14)  
+ * [Power-Ups](https://github.com/cormacmchale/MobileGameProject/issues/13)  
+ * [Implementing Sound](https://github.com/cormacmchale/MobileGameProject/issues/12)  
+ * [Spawning Enemies and Movement Patterns](https://github.com/cormacmchale/MobileGameProject/issues/11)  
+ * [Difficulty](https://github.com/cormacmchale/MobileGameProject/issues/9)
+ * [Score](https://github.com/cormacmchale/MobileGameProject/issues/8)
+ * [Design Change Approval](https://github.com/cormacmchale/MobileGameProject/issues/7)
+ * [Menus and Scenes](https://github.com/cormacmchale/MobileGameProject/issues/6)
+ * [Game Object Management](https://github.com/cormacmchale/MobileGameProject/issues/5)
+ * [Destroying Enemies](https://github.com/cormacmchale/MobileGameProject/issues/4)
+ * [Allowing the player to shoot](https://github.com/cormacmchale/MobileGameProject/issues/3)
+ * [Movement](https://github.com/cormacmchale/MobileGameProject/issues/2)
+ * [Player Health](https://github.com/cormacmchale/MobileGameProject/issues/1)
