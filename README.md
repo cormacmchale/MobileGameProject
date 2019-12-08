@@ -37,3 +37,14 @@ The entire development has been documented under the following headings.
  * [Allowing the player to shoot](https://github.com/cormacmchale/MobileGameProject/issues/3)
  * [Movement](https://github.com/cormacmchale/MobileGameProject/issues/2)
  * [Player Health](https://github.com/cormacmchale/MobileGameProject/issues/1)
+ 
+ 
+Test Plan
+======  
+## The following is a list of requirements by the designer - all requirments were acheived and verified
+![TestPlan](https://github.com/cormacmchale/MobileGameProject/blob/master/BadDrivers/Assets/GitImages/Requirements.jpg)
+
+Extras
+======
+## The following is a link to a part of the git repo where I pulled down and re-configured a package for allowing movement from button presses on android
+ * [Cross Platform Input Manager](https://github.com/cormacmchale/MobileGameProject/tree/master/BadDrivers/Assets/StandardAssets)
