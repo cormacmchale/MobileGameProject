@@ -9,14 +9,20 @@ public class EnemyTractor : MonoBehaviour
     //have access to the array of transforms
     Transform[] followThis;
 
-    //needed for gameplay updates
+    // Start is called before the first frame update
+    // access managers
     private scoreManager score;
     private healthManager health;
+    private AudioManager sound;
 
+    //used for holder the next point in the path
     private int nextMove;
 
     [SerializeField]
     private float speed;
+    //placeholder for explosion
+    [SerializeField]
+    private GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +32,10 @@ public class EnemyTractor : MonoBehaviour
         followThis = pathPoints.GetComponentsInChildren<Transform>();
         //just generate a random spot to move next
         nextMove = RNG();
-        //access managers for updat on collision
+        //access managers for update on collision
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
+        sound = FindObjectOfType<AudioManager>();
 
     }
     // Update is called once per frame
@@ -51,12 +58,16 @@ public class EnemyTractor : MonoBehaviour
         switch (col.gameObject.tag)
         {
             case "EnemyBike":
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                sound.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 health.decrementHealth();
                 //animation
                 break;
             case "Player":
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                sound.playExplosion();
                 Destroy(gameObject);
                 health.decrementHealth();
                 //animation

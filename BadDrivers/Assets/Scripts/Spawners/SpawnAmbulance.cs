@@ -25,11 +25,6 @@ public class SpawnAmbulance : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     //spawn the trucks randomly
     private void SpawnRepeating()
     {
@@ -38,5 +33,16 @@ public class SpawnAmbulance : MonoBehaviour
     private void Spawn()
     {
         Instantiate(Ambulance,ambulanceManager.transform.position, new Quaternion(0,0,0,0) ,ambulanceManager.transform);
+    }
+    //for increasing the difficulty
+    public void increaseSpawn()
+    {
+       //stop the orignal spanwer
+       CancelInvoke();
+       //update the values
+       howOftenBetweenSpawns += 1f;
+       timeUntilFirstSpawn = 1f; // so the break dosen't become too long in the incease of difficulty
+       //start invoke repeating again with new values
+       InvokeRepeating("Spawn", timeUntilFirstSpawn, howOftenBetweenSpawns);
     }
 }

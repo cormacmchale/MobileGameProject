@@ -38,10 +38,10 @@ public class TimerSpeedup : MonoBehaviour
     IEnumerator increasePlayerSpeed()
     {
         flagSpeed = false;
-        player.increaseSpeed();
-        increaseDifficulty();
         //alert difficult script here!- pass message
         yield return new WaitForSeconds(20);
+        player.increaseSpeed();
+        increaseDifficulty();
         flagSpeed = true;
     }
     //increase difficulty here accross the board

@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4019475527581939895}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.43473706, y: -0.3818785, z: 0}
+  m_LocalPosition: {x: -1.0143647, y: 1.0832928, z: 0}
   m_LocalScale: {x: 0.29, y: 0.341, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,6 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 10
   shoot: {fileID: 304656436843145005}
+  explosion: {fileID: 7342564326947261190, guid: 807dfb4471c29fc42878b0ffb0ff8517,
+    type: 3}
 --- !u!50 &304656436843145005
 Rigidbody2D:
   serializedVersion: 4

@@ -15,26 +15,22 @@ public class EnemyTruck : MonoBehaviour
     // access managers
     private scoreManager score;
     private healthManager health;
+    private AudioManager sound;
 
     [SerializeField]
     private GameObject explosion;
 
     void Start()
     {
-        //find the managers for correct health and score keeping
+        //find the managers for correct health and score keeping and playing sounds
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
-        //anims = FindObjectOfType<AnimationManager>();
+        sound = FindObjectOfType<AudioManager>();
         //give it a random speed
         //these game objects need to be managed
         //gameobjects managed by colliders
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * truckSpeed;
-    }
-    //not needed at the moment
-    private void Update()
-    { 
-
     }
     //handle logic for collisions here
     void OnCollisionEnter2D(Collision2D col)
@@ -43,12 +39,15 @@ public class EnemyTruck : MonoBehaviour
         {
             case "EnemyBike":
                 Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                sound.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 health.decrementHealth();
-                //animation
+
                 break;
             case "Player":
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                sound.playExplosion();
                 Destroy(gameObject);
                 health.decrementHealth();
                 //anims.Explosion();

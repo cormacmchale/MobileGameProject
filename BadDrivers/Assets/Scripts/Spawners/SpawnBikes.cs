@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpawnBikes : MonoBehaviour
 {
-    public EnemyBicycle Bike;
+    [SerializeField]
+    private EnemyBicycle Bike;
     //spawn bikes into here
-    public GameObject BikeManager;
+    [SerializeField]
+    private GameObject BikeManager;
 
     [SerializeField]
     private bool spawnBikes = false;

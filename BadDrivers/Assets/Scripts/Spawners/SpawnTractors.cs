@@ -43,11 +43,12 @@ public class SpawnTractors : MonoBehaviour
             Instantiate(Tractor, TractorManager.transform.position, new Quaternion(0, 0, 0, 0), TractorManager.transform);
         }
     }
+    //for increasing the difficulty
     public void increaseSpawn()
     {
-        howOftenBetweenSpawns++;
-        timeUntilFirstSpawn++;
-        MAXTRACTORS++;
+        howOftenBetweenSpawns+=5f;
+        timeUntilFirstSpawn+=5f;
+        MAXTRACTORS+=5;
     }
         
 }

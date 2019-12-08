@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    //get a handle on all managers for shooting an enemy
     private scoreManager score;
     private healthManager health;
+    private AudioManager audio;
 
     [SerializeField]
     private float thrust = 10.0f;
@@ -17,19 +19,20 @@ public class Bullet : MonoBehaviour
     //use this to move the bullet
     public Rigidbody2D shoot;
 
+    //placeholder for the explosion
+    [SerializeField]
+    private GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {    
         //will control direction of bullet based of the direction the player is moving in
         //will not need anything else here
         shoot.velocity = transform.right * thrust;
+        //only one instance of these managers
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
-    }
-
-    private void Update()
-    {
-        DestroyOffScreen();
+        audio = FindObjectOfType<AudioManager>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -39,16 +42,22 @@ public class Bullet : MonoBehaviour
         switch(col.gameObject.tag)
         {
             case "EnemyTruck":
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                audio.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 score.addScore(20);
                 break;
             case "EnemyTractor":
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                audio.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 score.addScore(30);
                 break;
             case "Ambulance":
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                audio.playExplosion();
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 score.addScore(50);
@@ -59,17 +68,5 @@ public class Bullet : MonoBehaviour
                 break;
         }
     }
-    //Object Management
-    private void DestroyOffScreen()
-    {
-        //after the bullet travels far enough.. then destroy it
-        if (gameObject.transform.position.x < outOfboundsLeftDown || gameObject.transform.position.y < outOfboundsLeftDown)
-        {
-            Destroy(gameObject);
-        }
-        else if (gameObject.transform.position.x > outOfboundsUpRight || gameObject.transform.position.y > outOfboundsUpRight)
-        {
-            Destroy(gameObject);
-        }
-    }
+
 }

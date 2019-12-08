@@ -39,5 +39,11 @@ public class SpawnRandomTruck : MonoBehaviour
         Truck.transform.position = pickRandom;
         Instantiate(Truck, transform);
     }
+    //for increasing the difficulty
+    public void increaseSpawn()
+    {
+        howOftenBetweenSpawns += 5f;
+        timeUntilFirstSpawn += 5f;
+    }
 
 }

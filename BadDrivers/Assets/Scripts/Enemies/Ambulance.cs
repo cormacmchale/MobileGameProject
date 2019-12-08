@@ -14,8 +14,13 @@ public class Ambulance : MonoBehaviour
     //make the abulance stop condition
     private bool go = true;
 
-    public scoreManager score;
-    public healthManager health;
+    //placeholders for the managers
+    private scoreManager score;
+    private healthManager health;
+    private AudioManager sound;
+
+    [SerializeField]
+    private GameObject explosion;
 
     void Start()
     {
@@ -27,6 +32,7 @@ public class Ambulance : MonoBehaviour
 
         score = FindObjectOfType<scoreManager>();
         health = FindObjectOfType<healthManager>();
+        sound = FindObjectOfType<AudioManager>();
 
     }
 
@@ -65,6 +71,8 @@ public class Ambulance : MonoBehaviour
         {
             case "Player":
                 //animation
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
+                sound.playExplosion();
                 Destroy(gameObject);
                 health.incrementHealth();
                 score.addScore(50);

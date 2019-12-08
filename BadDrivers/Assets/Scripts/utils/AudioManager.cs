@@ -26,10 +26,14 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    //methods for playing the shoot sound in other classes
+    //methods for playing the sfx sounds in other classes
     public void playShootSound()
     {
         Shoot.Play();
+    }
+    public void playExplosion()
+    {
+        Explosion.Play();
     }
     //method for setting the volume with a slider in another class
     public void VolumeControl(float volume)
@@ -49,12 +53,14 @@ public class AudioManager : MonoBehaviour
             //use boolean here
             //all sfx audio must change here
             Shoot.volume = 1.0f;
+            Explosion.volume = 1.0f;
             sfxCondition = true;
         }
         else //teh toggle is set to false - unticked
         {
             //mute all sounds
             Shoot.volume = 0.0f;
+            Explosion.volume = 0.0f;
             sfxCondition = false;
         }
     }
