@@ -13,9 +13,11 @@ public class EnemyTruck : MonoBehaviour
     private Rigidbody2D rb;
     // Start is called before the first frame update
     // access managers
-    public scoreManager score;
-    public healthManager health;
-    public AnimationManager anims;
+    private scoreManager score;
+    private healthManager health;
+
+    [SerializeField]
+    private GameObject explosion;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class EnemyTruck : MonoBehaviour
         switch (col.gameObject.tag)
         {
             case "EnemyBike":
+                Instantiate(explosion, transform.position, new Quaternion(0, 0, 0, 0));
                 Destroy(gameObject);
                 Destroy(col.gameObject);
                 health.decrementHealth();

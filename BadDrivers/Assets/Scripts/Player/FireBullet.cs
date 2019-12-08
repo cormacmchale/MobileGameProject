@@ -69,7 +69,8 @@ public class FireBullet : MonoBehaviour
         bullet.transform.position = transform.position;
         bullet.transform.Rotate(Vector3.forward * angle);
         //play sound effect and shoot bullet
-        shootSound.playShootSound();
         Instantiate(bullet);
+        shootSound.playShootSound();
+
     }
 }

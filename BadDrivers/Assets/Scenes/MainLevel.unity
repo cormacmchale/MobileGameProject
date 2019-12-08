@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tractor: {fileID: 5551385972801001539, guid: 0c7caa8d6acd6f94a95dc120135a6296, type: 3}
   TractorManager: {fileID: 310348324}
-  spawnTractors: 1
+  spawnTractors: 0
   howOftenBetweenSpawns: 10
   timeUntilFirstSpawn: 2
 --- !u!4 &248023521
@@ -212,7 +212,7 @@ Transform:
   - {fileID: 1050811505}
   - {fileID: 310348326}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &248023522
 MonoBehaviour:
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bike: {fileID: 26715059572250729, guid: e9452d4c3ced1194a96e28f55de844a7, type: 3}
   BikeManager: {fileID: 1654564295}
-  spawnBikes: 1
+  spawnBikes: 0
   howOftenBetweenSpawns: 6
   timeUntilFirstSpawn: 1
 --- !u!114 &1210068913
@@ -2883,7 +2883,7 @@ PrefabInstance:
     - target: {fileID: 3380261159470524108, guid: 5d981b9a01eb0b74b89f6e153c63fe24,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3380261159470524108, guid: 5d981b9a01eb0b74b89f6e153c63fe24,
         type: 3}
