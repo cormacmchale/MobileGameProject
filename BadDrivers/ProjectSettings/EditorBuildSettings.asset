@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/AudioMenu.unity
+    guid: dc790718af438434492eb33c41331f93
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6ce0ded719bdb2e43b8e74985dea9f2c
   m_configObjects: {}

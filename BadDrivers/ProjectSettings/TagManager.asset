@@ -11,6 +11,7 @@ TagManager:
   - Bullet
   - EnemyTractor
   - Ambulance
+  - MusicSingleton
   layers:
   - Default
   - TransparentFX
